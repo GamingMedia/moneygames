@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragmatic Play Slots — Provider 161</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f0f1a; color: #e0e0e0; min-height: 100vh; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 32px 24px; text-align: center; border-bottom: 2px solid #e94560; }
+    header img { height: 48px; margin-bottom: 12px; filter: brightness(1.2); }
+    header h1 { font-size: 2rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+    header p { color: #a0aec0; margin-top: 6px; font-size: 0.95rem; }
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 20px 24px; background: #16213e; border-bottom: 1px solid #1e2d4a; }
+    .controls input { flex: 1; min-width: 200px; padding: 10px 16px; border-radius: 8px; border: 1px solid #2d3748; background: #0f0f1a; color: #e0e0e0; font-size: 0.9rem; outline: none; }
+    .controls input:focus { border-color: #e94560; }
+    .badge-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #2d3748; background: transparent; color: #a0aec0; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background: #e94560; border-color: #e94560; color: #fff; }
+    .stats { padding: 12px 24px; font-size: 0.85rem; color: #718096; background: #0f0f1a; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 24px; }
+    .card { background: #1a1a2e; border-radius: 12px; overflow: hidden; border: 1px solid #1e2d4a; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(233,69,96,0.25); border-color: #e94560; }
+    .card-img { position: relative; overflow: hidden; padding-top: 66%; background: #0f0f1a; }
+    .card-img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .card:hover .card-img img { transform: scale(1.05); }
+    .badges { position: absolute; top: 8px; left: 8px; display: flex; flex-direction: column; gap: 4px; }
+    .badge { font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge.megaways { background: #805ad5; color: #fff; }
+    .badge.bonus { background: #d69e2e; color: #fff; }
+    .badge.progressive { background: #e94560; color: #fff; }
+    .card-body { padding: 12px 14px 16px; }
+    .card-title { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.3; }
+    .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .meta-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; background: #0f0f1a; color: #718096; border: 1px solid #2d3748; }
+    .play-btn { display: block; width: 100%; margin-top: 12px; padding: 8px; background: linear-gradient(135deg, #e94560, #c53030); color: #fff; text-align: center; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: opacity 0.2s; }
+    .play-btn:hover { opacity: 0.85; }
+    .no-results { text-align: center; padding: 60px 24px; color: #4a5568; font-size: 1.1rem; grid-column: 1/-1; }
+    footer { text-align: center; padding: 24px; color: #4a5568; font-size: 0.8rem; border-top: 1px solid #1e2d4a; margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://assets.slotslaunch.com/15981/pragmatic-play.png" alt="Pragmatic Play" onerror="this.style.display='none'">
+  <h1>Pragmatic Play Slots</h1>
+  <p>Provider 161 &mdash; 100 Games</p>
+</header>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search games..." oninput="renderGames()">
+  <div class="badge-filters">
+    <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" data-filter="megaways" onclick="setFilter('megaways',this)">Megaways</button>
+    <button class="filter-btn" data-filter="bonus" onclick="setFilter('bonus',this)">Bonus Buy</button>
+    <button class="filter-btn" data-filter="progressive" onclick="setFilter('progressive',this)">Progressive</button>
+  </div>
+</div>
+
+<div class="stats" id="stats">Showing 100 of 100 games</div>
+<div class="grid" id="grid"></div>
+
+<footer>Data sourced from SlotsLaunch &mdash; Pragmatic Play &copy; 2024</footer>
+
+<script>
+const GAMES = [
+  {"name":"Barn Festival","slug":"barn-festival","url":"https://slotslaunch.com/iframe/741","thumb":"https://assets.slotslaunch.com/4655/barn-festival.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Big Bass Splash","slug":"big-bass-splash","url":"https://slotslaunch.com/iframe/742","thumb":"https://assets.slotslaunch.com/4656/big-bass-splash.jpg","ThemeName":"Fish","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Bomb Bonanza","slug":"bomb-bonanza","url":"https://slotslaunch.com/iframe/743","thumb":"https://assets.slotslaunch.com/4657/bomb-bonanza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Book of Aztec King","slug":"book-of-aztec-king","url":"https://slotslaunch.com/iframe/744","thumb":"https://assets.slotslaunch.com/4658/book-of-aztec-king.jpg","ThemeName":"Aztec","megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Bull Fiesta","slug":"bull-fiesta","url":"https://slotslaunch.com/iframe/745","thumb":"https://assets.slotslaunch.com/4659/bull-fiesta.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Cash Patrol","slug":"cash-patrol","url":"https://slotslaunch.com/iframe/746","thumb":"https://assets.slotslaunch.com/4660/cash-patrol.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Chicken Chase","slug":"chicken-chase","url":"https://slotslaunch.com/iframe/747","thumb":"https://assets.slotslaunch.com/4661/chicken-chase.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Cleocatra","slug":"cleocatra","url":"https://slotslaunch.com/iframe/748","thumb":"https://assets.slotslaunch.com/4662/cleocatra.jpg","ThemeName":"Egyptian","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Clover Gold","slug":"clover-gold","url":"https://slotslaunch.com/iframe/749","thumb":"https://assets.slotslaunch.com/4663/clover-gold.jpg","ThemeName":"St. Patrick's Day","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Disco Lady","slug":"disco-lady","url":"https://slotslaunch.com/iframe/750","thumb":"https://assets.slotslaunch.com/4664/disco-lady.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Drill that Gold","slug":"drill-that-gold","url":"https://slotslaunch.com/iframe/751","thumb":"https://assets.slotslaunch.com/4665/drill-that-gold.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Eye of Cleopatra","slug":"eye-of-cleopatra","url":"https://slotslaunch.com/iframe/752","thumb":"https://assets.slotslaunch.com/4666/eye-of-cleopatra.jpg","ThemeName":"Cleopatra","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fire Strike 2","slug":"fire-strike-2","url":"https://slotslaunch.com/iframe/753","thumb":"https://assets.slotslaunch.com/4667/fire-strike-2.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Goblin Heist Powernudge","slug":"goblin-heist-powernudge","url":"https://slotslaunch.com/iframe/754","thumb":"https://assets.slotslaunch.com/4668/goblin-heist-powernudge.jpg","ThemeName":"Halloween","megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Little Gem","slug":"little-gem","url":"https://slotslaunch.com/iframe/755","thumb":"https://assets.slotslaunch.com/4669/little-gem.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"North Guardians","slug":"north-guardians","url":"https://slotslaunch.com/iframe/756","thumb":"https://assets.slotslaunch.com/4670/north-guardians.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Queen of Gods","slug":"queen-of-gods","url":"https://slotslaunch.com/iframe/757","thumb":"https://assets.slotslaunch.com/4671/queen-of-gods.jpg","ThemeName":"Egyptian","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Rainbow Gold","slug":"rainbow-gold","url":"https://slotslaunch.com/iframe/758","thumb":"https://assets.slotslaunch.com/4672/rainbow-gold.jpg","ThemeName":"St. Patrick's Day","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Rise of Samurai III","slug":"rise-of-samurai-3","url":"https://slotslaunch.com/iframe/759","thumb":"https://assets.slotslaunch.com/3764/rise-of-samurai-3.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Spirit of Adventure","slug":"spirit-of-adventure","url":"https://slotslaunch.com/iframe/760","thumb":"https://assets.slotslaunch.com/4673/spirit-of-adventure.jpg","ThemeName":"Adventure","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Sugar Rush","slug":"sugar-rush","url":"https://slotslaunch.com/iframe/761","thumb":"https://assets.slotslaunch.com/4674/sugar-rush.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"The Great Stick-Up","slug":"the-great-stick-up","url":"https://slotslaunch.com/iframe/762","thumb":"https://assets.slotslaunch.com/4675/the-great-stick-up.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Tic Tac Take","slug":"tic-tac-take","url":"https://slotslaunch.com/iframe/763","thumb":"https://assets.slotslaunch.com/4676/tic-tac-take.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Wild Beach Party","slug":"wild-beach-party","url":"https://slotslaunch.com/iframe/764","thumb":"https://assets.slotslaunch.com/4677/wild-beach-party.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"7","paylines":"Fixed"},
+  {"name":"Wild West Gold Megaways","slug":"wild-west-gold-megaways","url":"https://slotslaunch.com/iframe/765","thumb":"https://assets.slotslaunch.com/4678/wild-west-gold-megaways.jpg","ThemeName":"Wild West","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Zombie Carnival","slug":"zombie-carnival","url":"https://slotslaunch.com/iframe/766","thumb":"https://assets.slotslaunch.com/4679/zombie-carnival.jpg","ThemeName":"Halloween","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Shining Hot 100","slug":"shining-hot-100","url":"https://slotslaunch.com/iframe/1212","thumb":"https://assets.slotslaunch.com/75/shining-hot-100.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Shining Hot 40","slug":"shining-hot-40","url":"https://slotslaunch.com/iframe/1213","thumb":"https://assets.slotslaunch.com/76/shining-hot-40.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Shining Hot 20","slug":"shining-hot-20","url":"https://slotslaunch.com/iframe/1214","thumb":"https://assets.slotslaunch.com/77/shining-hot-20.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Shining Hot 5","slug":"shining-hot-5","url":"https://slotslaunch.com/iframe/1215","thumb":"https://assets.slotslaunch.com/78/shining-hot-5.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Tropical Tiki","slug":"tropical-tiki","url":"https://slotslaunch.com/iframe/1216","thumb":"https://assets.slotslaunch.com/79/tropical-tiki.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Magic Money Maze","slug":"magic-money-maze","url":"https://slotslaunch.com/iframe/1218","thumb":"https://assets.slotslaunch.com/81/magic-money-maze.jpg","ThemeName":"Magic","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Koi Pond","slug":"koi-pond","url":"https://slotslaunch.com/iframe/1219","thumb":"https://assets.slotslaunch.com/82/koi-pond.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Gorilla Mayhem","slug":"gorilla-mayhem","url":"https://slotslaunch.com/iframe/1311","thumb":"https://assets.slotslaunch.com/194/gorilla-mayhem.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Greedy Wolf","slug":"greedy-wolf","url":"https://slotslaunch.com/iframe/1394","thumb":"https://assets.slotslaunch.com/302/greedy-wolf.jpg","ThemeName":"Wolf","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Black Bull","slug":"black-bull","url":"https://slotslaunch.com/iframe/1423","thumb":"https://assets.slotslaunch.com/358/black-bull.jpg","ThemeName":"Animal","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Mahjong Panda","slug":"mahjong-panda","url":"https://slotslaunch.com/iframe/1452","thumb":"https://assets.slotslaunch.com/441/mahjong-panda.jpg","ThemeName":"Mahjong","megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Hot to Burn Extreme","slug":"hot-to-burn-extreme","url":"https://slotslaunch.com/iframe/1487","thumb":"https://assets.slotslaunch.com/565/hot-to-burn-extreme.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fire Hot 5","slug":"fire-hot-5","url":"https://slotslaunch.com/iframe/1523","thumb":"https://assets.slotslaunch.com/604/fire-hot-5.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fire Hot 40","slug":"fire-hot-40","url":"https://slotslaunch.com/iframe/1532","thumb":"https://assets.slotslaunch.com/613/fire-hot-40.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fire Hot 100","slug":"fire-hot-100","url":"https://slotslaunch.com/iframe/1533","thumb":"https://assets.slotslaunch.com/614/fire-hot-100.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Coffee Wild","slug":"coffee-wild","url":"https://slotslaunch.com/iframe/1535","thumb":"https://assets.slotslaunch.com/616/coffee-wild.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Down the Rails","slug":"down-the-rails","url":"https://slotslaunch.com/iframe/1560","thumb":"https://assets.slotslaunch.com/965/down-the-rails.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Octobeer Fortunes","slug":"octobeer-fortunes","url":"https://slotslaunch.com/iframe/1588","thumb":"https://assets.slotslaunch.com/676/octobeer-fortunes.jpg","ThemeName":"Oktoberfest","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fire Hot 20","slug":"fire-hot-20","url":"https://slotslaunch.com/iframe/1697","thumb":"https://assets.slotslaunch.com/809/fire-hot-20.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Happy Hooves","slug":"happy-hooves","url":"https://slotslaunch.com/iframe/1752","thumb":"https://assets.slotslaunch.com/888/happy-hooves.jpg","ThemeName":"Animal","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Striking Hot 5","slug":"striking-hot-5","url":"https://slotslaunch.com/iframe/1778","thumb":"https://assets.slotslaunch.com/916/striking-hot-5.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Book of Golden Sands","slug":"book-of-golden-sands","url":"https://slotslaunch.com/iframe/1823","thumb":"https://assets.slotslaunch.com/972/book-of-golden-sands.jpg","ThemeName":"Book of","megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Crown of Fire","slug":"crown-of-fire","url":"https://slotslaunch.com/iframe/1893","thumb":"https://assets.slotslaunch.com/1060/crown-of-fire.jpg","ThemeName":"Fruit","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Wild Hop & Drop","slug":"wild-hop-and-drop","url":"https://slotslaunch.com/iframe/1896","thumb":"https://assets.slotslaunch.com/1063/wild-hop-and-drop.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Floating Dragon Megaways","slug":"floating-dragon-megaways","url":"https://slotslaunch.com/iframe/1919","thumb":"https://assets.slotslaunch.com/1092/floating-dragon-megaways.jpg","ThemeName":"Dragon","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Aztec Blaze","slug":"aztec-blaze","url":"https://slotslaunch.com/iframe/2052","thumb":"https://assets.slotslaunch.com/1245/aztec-blaze.jpg","ThemeName":"Aztec","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Cheeky Emperor","slug":"cheeky-emperor","url":"https://slotslaunch.com/iframe/2067","thumb":"https://assets.slotslaunch.com/1268/cheeky-emperor.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"John Hunter and the Book of Tut Respin","slug":"john-hunter-and-the-book-of-tut-respin","url":"https://slotslaunch.com/iframe/2198","thumb":"https://assets.slotslaunch.com/1417/john-hunter-and-the-book-of-tut-respin.jpg","ThemeName":"Book of","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Pirate Golden Age","slug":"pirate-golden-age","url":"https://slotslaunch.com/iframe/2215","thumb":"https://assets.slotslaunch.com/1438/pirate-golden-age.jpg","ThemeName":"Pirate","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Wildman Super Bonanza","slug":"wildman-super-bonanza","url":"https://slotslaunch.com/iframe/2232","thumb":"https://assets.slotslaunch.com/1455/wildman-super-bonanza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Muertos Multiplier Megaways","slug":"muertos-multiplier-megaways","url":"https://slotslaunch.com/iframe/2263","thumb":"https://assets.slotslaunch.com/1494/muertos-multiplier-megaways.jpg","ThemeName":"Day of the Dead","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Candy Stars","slug":"candy-stars","url":"https://slotslaunch.com/iframe/2334","thumb":"https://assets.slotslaunch.com/1579/candy-stars.jpg","ThemeName":"Candy","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Big Bass Bonanza Keeping it Reel","slug":"big-bass-bonanza-keeping-it-reel","url":"https://slotslaunch.com/iframe/2411","thumb":"https://assets.slotslaunch.com/1679/big-bass-bonanza-keeping-it-reel.jpg","ThemeName":"Fish","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Sword of Ares","slug":"sword-of-ares","url":"https://slotslaunch.com/iframe/2414","thumb":"https://assets.slotslaunch.com/1682/sword-of-ares.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Legend of Heroes Megaways","slug":"legend-of-heroes-megaways","url":"https://slotslaunch.com/iframe/2501","thumb":"https://assets.slotslaunch.com/1780/legend-of-heroes-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Release the Kraken 2","slug":"release-the-kraken-2","url":"https://slotslaunch.com/iframe/2521","thumb":"https://assets.slotslaunch.com/1801/release-the-kraken-2.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Old Gold Miner Megaways","slug":"old-gold-miner-megaways","url":"https://slotslaunch.com/iframe/2630","thumb":"https://assets.slotslaunch.com/1917/old-gold-miner-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Casumo Bonanza","slug":"casumo-bonanza","url":"https://slotslaunch.com/iframe/2637","thumb":"https://assets.slotslaunch.com/1924/casumo-bonanza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Towering Fortunes","slug":"towering-fortunes","url":"https://slotslaunch.com/iframe/2653","thumb":"https://assets.slotslaunch.com/1940/towering-fortunes.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Spin & Score Megaways","slug":"spin-and-score-megaways","url":"https://slotslaunch.com/iframe/2654","thumb":"https://assets.slotslaunch.com/1941/spin-and-score-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Stoiximan Bonanza","slug":"stoiximan-bonanza","url":"https://slotslaunch.com/iframe/2674","thumb":"https://assets.slotslaunch.com/1962/stoiximan-bonanza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Shield of Sparta","slug":"shield-of-sparta","url":"https://slotslaunch.com/iframe/2686","thumb":"https://assets.slotslaunch.com/1974/shield-of-sparta.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Betano Bonanza","slug":"betano-bonanza","url":"https://slotslaunch.com/iframe/2744","thumb":"https://assets.slotslaunch.com/2036/betano-bonanza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Snakes & Ladders Snake Eyes","slug":"snakes-and-ladders-snake-eyes","url":"https://slotslaunch.com/iframe/2749","thumb":"https://assets.slotslaunch.com/2041/snakes-and-ladders-snake-eyes.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Gems of Serengeti","slug":"gems-of-serengeti","url":"https://slotslaunch.com/iframe/2798","thumb":"https://assets.slotslaunch.com/2091/gems-of-serengeti.jpg","ThemeName":"Gem","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Santa's Great Gifts","slug":"santas-great-gifts","url":"https://slotslaunch.com/iframe/2886","thumb":"https://assets.slotslaunch.com/2198/santas-great-gifts.jpg","ThemeName":"Christmas","megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Bigger Bass Blizzard Christmas Catch","slug":"bigger-bass-blizzard-christmas-catch","url":"https://slotslaunch.com/iframe/2998","thumb":"https://assets.slotslaunch.com/2325/bigger-bass-blizzard-christmas-catch.jpg","ThemeName":"Christmas","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Fury of Odin Megaways","slug":"fury-of-odin-megaways","url":"https://slotslaunch.com/iframe/3057","thumb":"https://assets.slotslaunch.com/2391/fury-of-odin-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Kingdom of Asgard","slug":"kingdom-of-asgard","url":"https://slotslaunch.com/iframe/3075","thumb":"https://assets.slotslaunch.com/2412/kingdom-of-asgard.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Reel Banks","slug":"reel-banks","url":"https://slotslaunch.com/iframe/3252","thumb":"https://assets.slotslaunch.com/2698/reel-banks.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"5 Lions Megaways","slug":"5-lions-megaways","url":"https://slotslaunch.com/iframe/3280","thumb":"https://assets.slotslaunch.com/2619/5-lions-megaways.jpg","ThemeName":"Asian","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Big Bass Bonanza Megaways","slug":"big-bass-bonanza-megaways","url":"https://slotslaunch.com/iframe/3281","thumb":"https://assets.slotslaunch.com/2620/big-bass-bonanza-megaways.jpg","ThemeName":"Fish","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Chilli Heat Megaways","slug":"chilli-heat-megaways","url":"https://slotslaunch.com/iframe/3282","thumb":"https://assets.slotslaunch.com/2621/chilli-heat-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Christmas Carol Megaways","slug":"christmas-carol-megaways","url":"https://slotslaunch.com/iframe/3283","thumb":"https://assets.slotslaunch.com/2622/christmas-carol-megaways.jpg","ThemeName":"Christmas","megaways":1,"bonus_buy":0,"progressive":0,"reels":"7","paylines":"Fixed"},
+  {"name":"Crystal Caverns Megaways","slug":"crystal-caverns-megaways","url":"https://slotslaunch.com/iframe/3284","thumb":"https://assets.slotslaunch.com/2623/crystal-caverns-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Curse of the Werewolf Megaways","slug":"curse-of-the-werewolf-megaways","url":"https://slotslaunch.com/iframe/3285","thumb":"https://assets.slotslaunch.com/2624/curse-of-the-werewolf-megaways.jpg","ThemeName":"Halloween","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Elemental Gems Megaways","slug":"elemental-gems-megaways","url":"https://slotslaunch.com/iframe/3286","thumb":"https://assets.slotslaunch.com/2625/elemental-gems-megaways.jpg","ThemeName":"Gem","megaways":1,"bonus_buy":0,"progressive":0,"reels":"3","paylines":"Fixed"},
+  {"name":"Extra Juicy Megaways","slug":"extra-juicy-megaways","url":"https://slotslaunch.com/iframe/3287","thumb":"https://assets.slotslaunch.com/2626/extra-juicy-megaways.jpg","ThemeName":"Fruit","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Great Rhino Megaways","slug":"great-rhino-megaways","url":"https://slotslaunch.com/iframe/3288","thumb":"https://assets.slotslaunch.com/2627/great-rhino-megaways.jpg","ThemeName":"Nature","megaways":1,"bonus_buy":0,"progressive":0,"reels":"8","paylines":"Fixed"},
+  {"name":"Madame Destiny Megaways","slug":"madame-destiny-megaways","url":"https://slotslaunch.com/iframe/3302","thumb":"https://assets.slotslaunch.com/2641/madame-destiny-megaways.jpg","ThemeName":"Halloween","megaways":1,"bonus_buy":0,"progressive":0,"reels":"7","paylines":"Fixed"},
+  {"name":"Power of Thor Megaways","slug":"power-of-thor-megaways","url":"https://slotslaunch.com/iframe/3320","thumb":"https://assets.slotslaunch.com/2659/power-of-thor-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Starz Megaways","slug":"starz-megaways","url":"https://slotslaunch.com/iframe/3326","thumb":"https://assets.slotslaunch.com/2665/starz-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"The Dog House Megaways","slug":"the-dog-house-megaways","url":"https://slotslaunch.com/iframe/3328","thumb":"https://assets.slotslaunch.com/2667/the-dog-house-megaways.jpg","ThemeName":"Animal","megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Hot Pepper","slug":"hot-pepper","url":"https://slotslaunch.com/iframe/3369","thumb":"https://assets.slotslaunch.com/2709/hot-pepper.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"7","paylines":"Fixed"},
+  {"name":"Buffalo King Megaways","slug":"buffalo-king-megaways","url":"https://slotslaunch.com/iframe/3391","thumb":"https://assets.slotslaunch.com/2731/buffal-king-megaways.jpg","ThemeName":"Buffalo","megaways":1,"bonus_buy":0,"progressive":0,"reels":"7","paylines":"Fixed"},
+  {"name":"Pizza Pizza Pizza","slug":"pizza-pizza-pizza","url":"https://slotslaunch.com/iframe/3406","thumb":"https://assets.slotslaunch.com/2748/pizza-pizza-pizza.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Sweet Powernudge","slug":"sweet-powernudge","url":"https://slotslaunch.com/iframe/3464","thumb":"https://assets.slotslaunch.com/2812/sweet-powernudge.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Starlight Christmas","slug":"starlight-christmas","url":"https://slotslaunch.com/iframe/3533","thumb":"https://assets.slotslaunch.com/2885/starlight-christmas.jpg","ThemeName":"Christmas","megaways":0,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"},
+  {"name":"Dragon Hero","slug":"dragon-hero","url":"https://slotslaunch.com/iframe/3850","thumb":"https://assets.slotslaunch.com/3262/dragon-hero.jpg","ThemeName":"Dragon","megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Wild Wild Bananas","slug":"wild-wild-bananas","url":"https://slotslaunch.com/iframe/3975","thumb":"https://assets.slotslaunch.com/3385/wild-wild-bananas.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Pinup Girls","slug":"pinup-girls","url":"https://slotslaunch.com/iframe/4022","thumb":"https://assets.slotslaunch.com/3432/pinup-girls.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Secret City Gold","slug":"secret-city-gold","url":"https://slotslaunch.com/iframe/4072","thumb":"https://assets.slotslaunch.com/3484/secret-city-gold.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"5","paylines":"Fixed"},
+  {"name":"Gates of Gatot Kaca","slug":"gates-of-gatot-kaca","url":"https://slotslaunch.com/iframe/4078","thumb":"https://assets.slotslaunch.com/3490/gates-of-gatot-kaca.jpg","ThemeName":null,"megaways":0,"bonus_buy":0,"progressive":0,"reels":"","paylines":""},
+  {"name":"Mammoth Gold Megaways","slug":"mammoth-gold-megaways","url":"https://slotslaunch.com/iframe/4079","thumb":"https://assets.slotslaunch.com/3491/mammoth-gold-megaways.jpg","ThemeName":null,"megaways":1,"bonus_buy":0,"progressive":0,"reels":"6","paylines":"Fixed"}
+];
+
+let activeFilter = 'all';
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGames();
+}
+
+function renderGames() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const grid = document.getElementById('grid');
+  const filtered = GAMES.filter(g => {
+    const matchQ = !q || g.name.toLowerCase().includes(q) || (g.ThemeName && g.ThemeName.toLowerCase().includes(q));
+    const matchF = activeFilter === 'all' ||
+      (activeFilter === 'megaways' && g.megaways) ||
+      (activeFilter === 'bonus' && g.bonus_buy) ||
+      (activeFilter === 'progressive' && g.progressive);
+    return matchQ && matchF;
+  });
+  document.getElementById('stats').textContent = `Showing ${filtered.length} of ${GAMES.length} games`;
+  grid.innerHTML = filtered.length ? filtered.map(g => `
+    <div class="card">
+      <div class="card-img">
+        <img src="${g.thumb}" alt="${g.name}" loading="lazy">
+        <div class="badges">
+          ${g.megaways ? '<span class="badge megaways">Megaways</span>' : ''}
+          ${g.bonus_buy ? '<span class="badge bonus">Bonus Buy</span>' : ''}
+          ${g.progressive ? '<span class="badge progressive">Progressive</span>' : ''}
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${g.name}</div>
+        <div class="card-meta">
+          ${g.ThemeName ? `<span class="meta-tag">${g.ThemeName}</span>` : ''}
+          ${g.reels ? `<span class="meta-tag">${g.reels} Reels</span>` : ''}
+          ${g.paylines ? `<span class="meta-tag">${g.paylines}</span>` : ''}
+        </div>
+        <a class="play-btn" href="${g.url}" target="_blank" rel="noopener">▶ Play Now</a>
+      </div>
+    </div>
+  `).join('') : '<div class="no-results">No games found matching your search.</div>';
+}
+
+renderGames();
+</script>
+</body>
+</html>
