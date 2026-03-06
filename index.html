@@ -1,356 +1,400 @@
 <!DOCTYPE html>
-<html lang="en-ZA">
+<html lang="en-ZA" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Real Money Slots South Africa 2025 – SA Casino Reviews | MoneyGames</title>
-<meta name="description" content="South Africa's most honest real money slots guide — tested by SA players with real rands. Best casinos, top slots and working promo codes for 2025."/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>Real Money Slots South Africa 2025 | MoneyGames</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --gold:#E8A800;--green:#009E72;--red:#E03030;
-  --bg:#0A0A0C;--bg2:#111116;--bg3:#18181F;
-  --text:#F0EFE8;--muted:#848490;--border:rgba(255,255,255,0.08);
-  --font-head:'Bebas Neue',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
+[data-theme="dark"]{--bg:#0B1F3A;--bg2:#122848;--bg3:#1A3560;--bg4:#0d1a2e;--text:#F0F4FA;--muted:#7A90B0;--border:rgba(30,111,217,0.18);--card-bg:#122848;--shadow:rgba(0,0,0,0.4)}
+[data-theme="light"]{--bg:#F0F4FA;--bg2:#FFFFFF;--bg3:#E4EBF5;--bg4:#d8e3f0;--text:#0B1F3A;--muted:#4a6080;--border:rgba(30,111,217,0.2);--card-bg:#FFFFFF;--shadow:rgba(11,31,58,0.12)}
+:root{--blue:#1E6FD9;--blue2:#2580F0;--green:#00A876;--red:#E03030;--fh:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box;transition:background-color .25s,color .2s,border-color .2s}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
 a{text-decoration:none;color:inherit}
+img{display:block}
 .page{display:none}.page.active{display:block}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:300;height:64px;background:rgba(10,10,12,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-.nav-logo{font-family:var(--font-head);font-size:1.6rem;letter-spacing:1px;cursor:pointer}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);cursor:pointer;transition:.2s}
-.nav-links a:hover,.nav-links a.act{color:var(--text)}
-.nav-cta{background:var(--gold);color:#000!important;padding:8px 18px;border-radius:6px;font-weight:600!important;font-size:.8rem!important;cursor:pointer;transition:.2s!important}
-.nav-cta:hover{background:#ffbe00!important;transform:translateY(-1px)}
-.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:.9rem}
+nav{position:sticky;top:0;z-index:300;height:64px;background:var(--bg4);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:12px}
+.nav-logo{font-family:var(--fh);font-size:1.55rem;letter-spacing:1px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.nav-logo span{color:var(--blue2)}
+.nav-center{display:flex;align-items:center;gap:4px;flex:1;justify-content:center;flex-wrap:wrap}
+.nav-center a{font-size:.76rem;font-weight:500;color:var(--muted);cursor:pointer;padding:5px 9px;border-radius:6px;transition:.2s;white-space:nowrap}
+.nav-center a:hover,.nav-center a.act{color:var(--text);background:rgba(30,111,217,0.1)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-cta{background:var(--blue2);color:#fff!important;padding:7px 16px;border-radius:6px;font-weight:600!important;font-size:.76rem!important;cursor:pointer;white-space:nowrap}
+.nav-cta:hover{background:#3a8fff!important}
+.theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:1rem;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.theme-toggle:hover{border-color:var(--blue2);color:var(--blue2)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:1px solid var(--border);border-radius:8px;flex-shrink:0}
+.ham span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--bg4);border-bottom:1px solid var(--border);z-index:290;flex-direction:column;padding:12px 16px 20px;gap:4px;max-height:calc(100vh - 64px);overflow-y:auto}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:.88rem;font-weight:500;color:var(--muted);padding:10px 14px;border-radius:8px;cursor:pointer;border-bottom:1px solid var(--border)}
+.mob-menu a:hover{color:var(--text);background:rgba(30,111,217,0.1)}
+.mob-menu .mob-cta{background:var(--blue2);color:#fff;text-align:center;border:none;border-radius:8px;margin-top:8px}
+.mob-hub{background:var(--bg3);border-radius:8px;padding:10px 14px;margin-top:8px}
+.mob-hub-title{font-family:var(--fm);font-size:.6rem;color:var(--blue2);letter-spacing:2px;margin-bottom:8px}
+.mob-hub-links{display:flex;flex-wrap:wrap;gap:6px}
+.mob-hub-link{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:20px;font-size:.75rem;cursor:pointer}
+.mob-hub-link:hover{border-color:var(--blue2);color:var(--blue2)}
 
-/* HERO */
-.hero{min-height:92vh;background:linear-gradient(160deg,#0a0a0c 0%,#0d0f14 50%,#0a0c0a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden}
-.hero-float{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-float span{position:absolute;font-size:1.8rem;opacity:0;animation:floatUp 8s ease-in infinite}
-@keyframes floatUp{0%{opacity:0;transform:translateY(100%)}10%{opacity:.15}90%{opacity:.05}100%{opacity:0;transform:translateY(-100vh)}}
-.hero-content{position:relative;z-index:2;max-width:740px}
-.hero-tag{font-family:var(--font-mono);font-size:.72rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;background:rgba(232,168,0,.1);border:1px solid rgba(232,168,0,.2);padding:4px 14px;border-radius:20px;display:inline-block}
-.hero h1{font-family:var(--font-head);font-size:clamp(3rem,8vw,5.5rem);line-height:1;margin-bottom:16px;letter-spacing:1px}
-.hero h1 .g{color:var(--gold)}
-.hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 32px;font-weight:300}
-.hero-sub em{color:var(--gold);font-style:normal;font-weight:500}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.btn-primary{background:var(--gold);color:#000;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;transition:.2s;border:none}
-.btn-primary:hover{background:#ffbe00;transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,168,0,.3)}
-.btn-secondary{background:transparent;color:var(--text);padding:13px 28px;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;border:1px solid var(--border);transition:.2s}
-.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
-.hstat{text-align:center}
-.hstat-num{font-family:var(--font-head);font-size:2rem;color:var(--gold);line-height:1}
-.hstat-label{font-size:.7rem;color:var(--muted);margin-top:2px;font-family:var(--font-mono)}
-
-/* SECTIONS */
-.section{padding:64px 24px}
+.section{padding:56px 20px}
 .section-alt{background:var(--bg2)}
 .container{max-width:1120px;margin:0 auto}
-.sec-label{font-family:var(--font-mono);font-size:.68rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.sec-label{font-family:var(--fm);font-size:.65rem;color:var(--blue2);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
 .sec-label::before{content:'// '}
-.sec-title{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:8px;line-height:1.1}
-.sec-desc{color:var(--muted);font-size:.9rem;max-width:540px;margin-bottom:36px;font-weight:300}
+.sec-title{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:8px;line-height:1.1}
+.sec-desc{color:var(--muted);font-size:.88rem;max-width:540px;margin-bottom:32px;font-weight:300}
 
-/* TRUST STRIP */
-.trust-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 24px}
-.trust-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--muted);font-weight:500}
-.trust-item .ti{color:var(--green);font-size:1rem}
+.hero{min-height:88vh;background:linear-gradient(160deg,var(--bg4) 0%,var(--bg) 50%,var(--bg4) 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(30,111,217,0.12) 0%,transparent 65%)}
+.hero-content{position:relative;z-index:2;max-width:740px}
+.hero-tag{font-family:var(--fm);font-size:.7rem;color:var(--blue2);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;background:rgba(30,111,217,0.1);border:1px solid rgba(30,111,217,0.25);padding:4px 14px;border-radius:20px;display:inline-block}
+.hero h1{font-family:var(--fh);font-size:clamp(3rem,8vw,5.5rem);line-height:1;margin-bottom:16px;letter-spacing:1px}
+.hero h1 .g{color:var(--blue2)}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 32px;font-weight:300}
+.hero-sub em{color:var(--blue2);font-style:normal;font-weight:500}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.btn-primary{background:var(--blue2);color:#fff;padding:12px 26px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s;border:none;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:#3a8fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,111,217,.3)}
+.btn-secondary{background:transparent;color:var(--text);padding:12px 26px;border-radius:8px;font-weight:600;font-size:.88rem;cursor:pointer;border:1px solid var(--border);transition:.2s}
+.btn-secondary:hover{border-color:var(--blue2);color:var(--blue2)}
+.hstat-num{font-family:var(--fh);font-size:2rem;color:var(--blue2);line-height:1}
+.hstat-label{font-size:.68rem;color:var(--muted);margin-top:2px;font-family:var(--fm)}
+.hero-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
 
-/* PROVIDER CARDS */
-.provider-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:700px){.provider-grid{grid-template-columns:1fr}}
-.prov-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px;transition:.2s;cursor:pointer}
-.prov-card:hover{border-color:rgba(232,168,0,.35);transform:translateY(-3px)}
-.prov-icon{font-size:2.5rem;margin-bottom:12px}
-.prov-name{font-family:var(--font-head);font-size:1.5rem;margin-bottom:6px;color:var(--gold)}
-.prov-desc{font-size:.85rem;color:var(--muted);margin-bottom:16px;font-weight:300}
-.prov-stats{display:flex;gap:16px;margin-bottom:18px}
-.ps{background:rgba(232,168,0,.08);border:1px solid rgba(232,168,0,.15);padding:6px 12px;border-radius:6px;text-align:center}
-.ps-val{font-family:var(--font-mono);font-size:.9rem;color:var(--gold);font-weight:500}
-.ps-key{font-size:.62rem;color:var(--muted);margin-top:1px}
+.trust-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 20px}
+.trust-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);font-weight:500}
+.trust-item .ti{color:var(--green)}
 
-/* SLOT GRID */
-.slot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:14px}
-.slot-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:.2s}
-.slot-card:hover{border-color:rgba(232,168,0,.4);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
-.slot-thumb{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
-.slot-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.slot-body{padding:10px 12px}
-.slot-name{font-weight:600;font-size:.85rem;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.slot-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.slot-rtp{font-family:var(--font-mono);font-size:.68rem;background:rgba(0,158,114,.12);color:var(--green);padding:2px 7px;border-radius:4px;font-weight:500}
-.slot-badge{font-size:.62rem;padding:2px 6px;border-radius:4px;font-weight:700}
-.badge-hot{background:rgba(232,168,0,.15);color:var(--gold)}
+.hub-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.hub-pill{background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;transition:.2s;font-weight:500}
+.hub-pill:hover,.hub-pill.act{background:rgba(30,111,217,0.15);border-color:var(--blue2);color:var(--blue2)}
+
+.hub-hero{background:linear-gradient(135deg,var(--bg4),var(--bg3));border-radius:14px;padding:32px 28px;margin-bottom:32px;border:1px solid var(--border)}
+.hub-hero-title{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);margin-bottom:8px}
+.hub-hero-desc{color:var(--muted);font-size:.9rem;max-width:600px;line-height:1.7;font-weight:300}
+.hub-meta{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+.hub-stat{background:rgba(30,111,217,0.1);border:1px solid rgba(30,111,217,0.2);padding:8px 14px;border-radius:8px;text-align:center}
+.hub-stat-val{font-family:var(--fh);font-size:1.3rem;color:var(--blue2)}
+.hub-stat-key{font-family:var(--fm);font-size:.6rem;color:var(--muted)}
+
+.slot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px}
+.slot-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:.25s;position:relative}
+.slot-card:hover{border-color:rgba(30,111,217,.5);transform:translateY(-4px);box-shadow:0 14px 32px var(--shadow)}
+.slot-thumb{aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--bg4)}
+.slot-thumb img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.slot-card:hover .slot-thumb img{transform:scale(1.06)}
+.launch-overlay{position:absolute;inset:0;background:rgba(11,31,58,0.82);display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s}
+.slot-card:hover .launch-overlay{opacity:1}
+.launch-btn{background:var(--blue2);color:#fff;border:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:.78rem;cursor:pointer}
+.launch-btn:hover{background:#3a8fff}
+.slot-body{padding:9px 11px}
+.slot-name{font-weight:600;font-size:.82rem;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot-meta{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.slot-rtp{font-family:var(--fm);font-size:.65rem;background:rgba(0,168,118,.12);color:var(--green);padding:2px 6px;border-radius:4px}
+.slot-badge{font-size:.6rem;padding:2px 5px;border-radius:4px;font-weight:700}
+.badge-hot{background:rgba(30,111,217,.2);color:var(--blue2)}
 .badge-new{background:rgba(224,48,48,.15);color:var(--red)}
-.slot-prov{font-size:.65rem;color:var(--muted);margin-top:3px}
+.slot-prov{font-size:.62rem;color:var(--muted);margin-top:2px}
 
-/* CASINO ROWS */
-.casino-list{display:flex;flex-direction:column;gap:12px}
-.casino-row{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;transition:.2s;cursor:pointer}
-.casino-row:hover{border-color:rgba(232,168,0,.3)}
-.casino-rank{font-family:var(--font-head);font-size:1.8rem;color:var(--border);min-width:32px;text-align:center}
-.casino-rank.top{color:var(--gold)}
-.casino-info{flex:1;min-width:160px}
-.casino-name{font-weight:700;font-size:.95rem;margin-bottom:3px}
-.casino-desc{font-size:.78rem;color:var(--muted);font-weight:300}
-.casino-bonus{text-align:center;flex-shrink:0}
-.casino-bonus-amt{font-family:var(--font-head);font-size:1.3rem;color:var(--green)}
-.casino-bonus-label{font-size:.65rem;color:var(--muted);font-family:var(--font-mono)}
-.casino-stars{color:var(--gold);font-size:.85rem;margin-top:2px}
-.casino-code{flex-shrink:0}
-.code-box{background:rgba(232,168,0,.08);border:1px dashed rgba(232,168,0,.3);border-radius:6px;padding:7px 12px;text-align:center;cursor:pointer;transition:.2s}
-.code-box:hover{background:rgba(232,168,0,.15)}
-.code-label{font-size:.6rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:2px}
-.code-val{font-family:var(--font-mono);color:var(--gold);font-size:.85rem;font-weight:500}
-.casino-cta{flex-shrink:0}
+.game-detail{max-width:980px;margin:0 auto;padding:24px 20px}
+.game-iframe-wrap{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:2px solid var(--border);background:#000;margin-bottom:24px;position:relative}
+.game-iframe-wrap iframe{width:100%;height:100%;border:none}
+.game-thumb-preview{width:100%;height:100%;object-fit:cover;opacity:.35;position:absolute;inset:0}
+.game-launch-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.play-big-btn{background:var(--blue2);color:#fff;border:none;padding:16px 36px;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;gap:10px;transition:.2s}
+.play-big-btn:hover{background:#3a8fff;transform:scale(1.04)}
+.game-info-grid{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
+.game-stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.gstat{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 14px;text-align:center}
+.gstat-val{font-family:var(--fh);font-size:1.2rem;color:var(--blue2);line-height:1}
+.gstat-key{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-top:2px}
+.game-desc-body{font-size:.86rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:20px}
+.game-desc-body p{margin-bottom:10px}
 
-/* HOW TO */
-.how-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.how-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:22px;position:relative}
-.how-num{font-family:var(--font-head);font-size:3.5rem;color:rgba(232,168,0,.15);line-height:1;margin-bottom:8px}
-.how-title{font-weight:600;font-size:.95rem;margin-bottom:6px}
-.how-desc{font-size:.8rem;color:var(--muted);font-weight:300}
+.payout-table{width:100%;border-collapse:collapse;font-size:.78rem;margin-top:10px;margin-bottom:24px}
+.payout-table th{background:var(--bg3);color:var(--blue2);padding:9px 12px;text-align:left;border:1px solid var(--border);font-family:var(--fm);font-size:.63rem}
+.payout-table td{padding:9px 12px;border:1px solid var(--border);background:var(--card-bg);vertical-align:middle}
+.payout-table tr:hover td{background:var(--bg3)}
+.payout-val{font-family:var(--fm);color:var(--blue2);font-weight:500}
+.payout-max{color:var(--green);font-weight:700}
 
-/* RESP GAMBLING */
-.rg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-@media(max-width:700px){.rg-grid{grid-template-columns:1fr}}
-.rg-copy{font-size:.88rem;color:var(--muted);line-height:1.8;font-weight:300}
-.rg-copy p{margin-bottom:12px}
-.rg-hotline{background:rgba(224,48,48,.08);border:1px solid rgba(224,48,48,.2);border-radius:10px;padding:18px;margin-top:14px}
-.rg-hl-num{font-family:var(--font-head);font-size:2rem;color:var(--red)}
-.rg-hl-label{font-size:.72rem;color:var(--muted);font-family:var(--font-mono)}
-.rg-points{list-style:none}
-.rg-points li{padding:9px 0;border-bottom:1px solid var(--border);font-size:.83rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px;font-weight:300}
-.rg-points li::before{content:'→';color:var(--gold);flex-shrink:0}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin-top:12px}
 
-/* FOOTER */
-footer{background:#07070A;border-top:1px solid var(--border);padding:48px 24px 28px}
-.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
-@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
-.footer-brand .nav-logo{font-size:1.4rem;margin-bottom:10px}
-.footer-brand p{font-size:.78rem;color:var(--muted);line-height:1.7;font-weight:300;max-width:240px}
-.footer-col h4{font-family:var(--font-mono);font-size:.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.footer-col a{display:block;font-size:.78rem;color:var(--muted);margin-bottom:7px;cursor:pointer;transition:.2s}
-.footer-col a:hover{color:var(--text)}
-.footer-bottom{max-width:1120px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.footer-disc{font-size:.7rem;color:#444;line-height:1.6;max-width:720px}
-.footer-age{font-family:var(--font-head);font-size:1.1rem;background:#111;border:2px solid #222;color:#555;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.casino-sidebar{position:sticky;top:80px}
+.casino-sidebar-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px}
+.sidebar-title{font-family:var(--fm);font-size:.62rem;color:var(--blue2);letter-spacing:2px;margin-bottom:12px}
+.casino-mini{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.casino-mini:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.casino-mini-name{font-weight:700;font-size:.82rem;margin-bottom:1px}
+.casino-mini-bonus{font-size:.7rem;color:var(--green)}
+.casino-mini-code{font-family:var(--fm);font-size:.65rem;color:var(--blue2);background:rgba(30,111,217,0.1);padding:2px 7px;border-radius:4px;cursor:pointer;white-space:nowrap}
 
-/* CASINO REVIEW PAGE */
-.rev-wrap{max-width:940px;margin:0 auto;padding:24px}
-.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:18px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.breadcrumb .lnk{cursor:pointer;color:var(--gold)}
-.breadcrumb .lnk:hover{text-decoration:underline}
-.rev-hero-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
-.rev-emoji{width:76px;height:76px;background:linear-gradient(135deg,var(--gold),#b07000);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
-.rev-info{flex:1;min-width:200px}
-.rev-name{font-family:var(--font-head);font-size:2rem;line-height:1;margin-bottom:4px}
-.rev-url{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-bottom:8px}
-.rev-stars{color:var(--gold);font-size:1rem;margin-bottom:8px}
-.rev-tags{display:flex;gap:6px;flex-wrap:wrap}
-.rtag{background:rgba(232,168,0,.08);border:1px solid rgba(232,168,0,.15);color:var(--gold);padding:3px 10px;border-radius:14px;font-size:.68rem;font-family:var(--font-mono)}
-.rev-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
-.rev-promo{background:rgba(232,168,0,.06);border:2px dashed rgba(232,168,0,.3);border-radius:10px;padding:12px 18px;text-align:center}
-.rev-promo-label{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);margin-bottom:4px}
-.rev-promo-code{font-family:var(--font-mono);font-size:1.2rem;font-weight:500;color:var(--gold);cursor:pointer;letter-spacing:1px}
-.rev-cta{background:var(--gold);color:#000;padding:11px 24px;border-radius:8px;font-weight:700;font-size:.85rem;display:block;text-align:center;transition:.2s;white-space:nowrap}
-.rev-cta:hover{background:#ffbe00;transform:scale(1.03)}
-.rev-body-section{margin-bottom:22px}
-.rev-body-title{font-family:var(--font-head);font-size:1.3rem;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.rev-body-copy{font-size:.85rem;color:var(--muted);line-height:1.8;font-weight:300}
-.rev-body-copy p{margin-bottom:10px}
-.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
-@media(max-width:550px){.pros-cons{grid-template-columns:1fr}}
-.pros,.cons{background:var(--bg3);border-radius:8px;padding:16px}
-.pros{border:1px solid rgba(0,158,114,.2)}
-.cons{border:1px solid rgba(224,48,48,.2)}
-.pros h4{color:var(--green);font-size:.8rem;margin-bottom:10px}
-.cons h4{color:var(--red);font-size:.8rem;margin-bottom:10px}
-.pros li,.cons li{font-size:.78rem;color:var(--muted);list-style:none;padding:4px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.4}
-.bonus-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;gap:20px;flex-wrap:wrap;margin:14px 0}
-.bb-item .bb-val{font-family:var(--font-head);font-size:1.4rem;color:var(--gold)}
-.bb-item .bb-key{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);margin-top:1px}
-.rating-tbl{width:100%;border-collapse:collapse;font-size:.8rem}
-.rating-tbl td{padding:9px 10px;border:1px solid var(--border);background:var(--bg3)}
+.casino-list{display:flex;flex-direction:column;gap:10px}
+.casino-row{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;transition:.2s;cursor:pointer}
+.casino-row:hover{border-color:rgba(30,111,217,.3)}
+.casino-rank{font-family:var(--fh);font-size:1.8rem;color:var(--border);min-width:28px;text-align:center}
+.casino-rank.top{color:var(--blue2)}
+.casino-info{flex:1;min-width:150px}
+.casino-name{font-weight:700;font-size:.92rem;margin-bottom:2px}
+.casino-desc{font-size:.75rem;color:var(--muted);font-weight:300}
+.casino-stars{color:var(--blue2);font-size:.82rem;margin-top:2px}
+.casino-bonus-amt{font-family:var(--fh);font-size:1.25rem;color:var(--green)}
+.casino-bonus-label{font-size:.63rem;color:var(--muted);font-family:var(--fm)}
+.code-box{background:rgba(30,111,217,.1);border:1px dashed rgba(30,111,217,.3);border-radius:6px;padding:6px 11px;text-align:center;cursor:pointer;transition:.2s;flex-shrink:0}
+.code-box:hover{background:rgba(30,111,217,.2)}
+.code-label{font-size:.58rem;color:var(--muted);font-family:var(--fm);margin-bottom:2px}
+.code-val{font-family:var(--fm);color:var(--blue2);font-size:.82rem;font-weight:500}
+
+.rev-wrap{max-width:940px;margin:0 auto;padding:24px 20px}
+.rev-hero-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:20px;display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
+.rev-emoji{width:70px;height:70px;background:linear-gradient(135deg,var(--blue2),#0a3a8a);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
+.rev-name{font-family:var(--fh);font-size:1.9rem;line-height:1;margin-bottom:4px}
+.rev-stars{color:var(--blue2);font-size:.95rem;margin-bottom:8px}
+.rtag{background:rgba(30,111,217,.1);border:1px solid rgba(30,111,217,.15);color:var(--blue2);padding:3px 9px;border-radius:14px;font-size:.66rem;font-family:var(--fm)}
+.rev-promo{background:rgba(30,111,217,.08);border:2px dashed rgba(30,111,217,.3);border-radius:10px;padding:11px 16px;text-align:center}
+.rev-promo-label{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-bottom:4px}
+.rev-promo-code{font-family:var(--fm);font-size:1.15rem;font-weight:500;color:var(--blue2);cursor:pointer}
+.rev-cta{background:var(--blue2);color:#fff;padding:10px 22px;border-radius:8px;font-weight:700;font-size:.82rem;display:block;text-align:center;transition:.2s}
+.rev-cta:hover{background:#3a8fff}
+.rev-body-title{font-family:var(--fh);font-size:1.25rem;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.rev-body-copy{font-size:.84rem;color:var(--muted);line-height:1.8;font-weight:300}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.pros,.cons{background:var(--bg3);border-radius:8px;padding:14px}
+.pros{border:1px solid rgba(0,168,118,.2)}.cons{border:1px solid rgba(224,48,48,.2)}
+.pros h4{color:var(--green);font-size:.78rem;margin-bottom:8px}.cons h4{color:var(--red);font-size:.78rem;margin-bottom:8px}
+.pros li,.cons li{font-size:.76rem;color:var(--muted);list-style:none;padding:3px 0;display:flex;gap:5px;line-height:1.4}
+.bonus-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;display:flex;gap:16px;flex-wrap:wrap;margin:12px 0}
+.bb-val{font-family:var(--fh);font-size:1.35rem;color:var(--blue2)}
+.bb-key{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-top:1px}
+.rating-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.rating-tbl td{padding:8px 10px;border:1px solid var(--border);background:var(--bg3)}
 .rating-tbl td:first-child{color:var(--muted);width:40%;font-weight:500}
 .rbar{display:flex;align-items:center;gap:8px}
-.rbar-track{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
-.rbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),#b07000)}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
-.chip{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:10px;font-size:.72rem}
-.chip.has{color:var(--gold);border-color:rgba(232,168,0,.3)}
+.rbar-track{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.rbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue2),#3a8fff)}
+.chip{background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:3px 9px;border-radius:10px;font-size:.7rem}
+.chip.has{color:var(--blue2);border-color:rgba(30,111,217,.3)}
 
-/* TOAST */
-.toast{position:fixed;bottom:20px;right:20px;background:var(--green);color:#fff;padding:10px 18px;border-radius:24px;font-size:.8rem;font-weight:600;z-index:9999;opacity:0;transition:.3s;pointer-events:none;font-family:var(--font-mono)}
-.toast.show{opacity:1}
-
-/* WHERE TO PLAY TABLE */
-.wtp-table{width:100%;border-collapse:collapse;font-size:.78rem}
-.wtp-table th{background:var(--bg2);color:var(--gold);padding:10px 12px;text-align:left;border:1px solid var(--border);font-family:var(--font-mono);font-size:.65rem;font-weight:500}
-.wtp-table td{padding:11px 12px;border:1px solid var(--border);background:var(--bg3);vertical-align:middle}
-.wtp-table tr:hover td{background:rgba(255,255,255,.02)}
+.wtp-table{width:100%;border-collapse:collapse;font-size:.75rem}
+.wtp-table th{background:var(--bg3);color:var(--blue2);padding:9px 10px;text-align:left;border:1px solid var(--border);font-family:var(--fm);font-size:.62rem}
+.wtp-table td{padding:10px;border:1px solid var(--border);background:var(--card-bg);vertical-align:middle}
+.wtp-table tr:hover td{background:var(--bg3)}
 .tick{color:var(--green)}.cross{color:var(--border)}
 
-@media(max-width:700px){
-  .nav-links{display:none}
-  .slot-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.how-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px}
+.how-num{font-family:var(--fh);font-size:3rem;color:rgba(30,111,217,.18);line-height:1;margin-bottom:8px}
+.how-title{font-weight:600;font-size:.9rem;margin-bottom:5px}
+.how-desc{font-size:.78rem;color:var(--muted);font-weight:300}
+
+.breadcrumb{font-size:.73rem;color:var(--muted);margin-bottom:16px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.breadcrumb .lnk{cursor:pointer;color:var(--blue2)}.breadcrumb .lnk:hover{text-decoration:underline}
+
+.modal-bg{position:fixed;inset:0;background:rgba(7,19,36,0.92);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.modal-bg.hidden{display:none}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px;width:100%;max-width:520px;padding:26px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+.modal-close:hover{color:var(--text)}
+.modal-title{font-family:var(--fh);font-size:1.7rem;margin-bottom:5px}
+.modal-sub{font-size:.8rem;color:var(--muted);margin-bottom:20px}
+.ai-loading{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:.78rem;font-family:var(--fm)}
+.dot{width:6px;height:6px;background:var(--blue2);border-radius:50%;animation:bounce .8s infinite}
+.dot:nth-child(2){animation-delay:.15s}.dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
+.quiz-opt{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 13px;font-size:.83rem;cursor:pointer;text-align:left;color:var(--text);width:100%;margin-bottom:7px;transition:.2s}
+.quiz-opt:hover,.quiz-opt.selected{border-color:var(--blue2);background:rgba(30,111,217,.1);color:var(--blue2)}
+.quiz-label{font-family:var(--fm);font-size:.62rem;color:var(--blue2);margin-bottom:7px;letter-spacing:1px}
+.ai-response{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:.84rem;color:var(--muted);line-height:1.8;min-height:70px;margin-top:14px}
+.ai-response p{margin-bottom:8px}
+.ai-response strong{color:var(--text)}
+
+.toast{position:fixed;bottom:20px;right:20px;background:var(--green);color:#fff;padding:9px 16px;border-radius:24px;font-size:.78rem;font-weight:600;z-index:9999;opacity:0;transition:.3s;pointer-events:none;font-family:var(--fm)}
+.toast.show{opacity:1}
+
+footer{background:var(--bg4);border-top:1px solid var(--border);padding:44px 20px 24px}
+.footer-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:36px}
+.footer-brand p{font-size:.76rem;color:var(--muted);line-height:1.7;font-weight:300;max-width:230px}
+.footer-col h4{font-family:var(--fm);font-size:.62rem;color:var(--blue2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.footer-col a{display:block;font-size:.76rem;color:var(--muted);margin-bottom:6px;cursor:pointer;transition:.2s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{max-width:1120px;margin:0 auto;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.footer-disc{font-size:.68rem;color:var(--muted);opacity:.5;line-height:1.6;max-width:700px}
+.footer-age{font-family:var(--fh);font-size:1rem;background:var(--bg3);border:2px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+.ai-fab{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fab-btn{background:var(--blue2);color:#fff;border:none;border-radius:28px;padding:11px 18px;font-weight:700;font-size:.8rem;cursor:pointer;transition:.2s;box-shadow:0 4px 20px rgba(30,111,217,.35);display:flex;align-items:center;gap:6px}
+.fab-btn:hover{background:#3a8fff;transform:translateY(-2px)}
+.fab-btn.sec{background:var(--bg3);border:1px solid var(--border);color:var(--muted)}
+.fab-btn.sec:hover{color:var(--text);border-color:var(--blue2)}
+
+@media(max-width:900px){.nav-center{display:none}.ham{display:flex}.footer-grid{grid-template-columns:1fr 1fr}.game-info-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.slot-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.footer-grid{grid-template-columns:1fr}.pros-cons{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div class="toast" id="toast"></div>
 
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a onclick="showPage('home');closeMob()">🏠 Home</a>
+  <a onclick="showPage('slots');closeMob()">🎰 All Slots</a>
+  <a onclick="filterProv('Pragmatic Play');closeMob()">🎯 Pragmatic Play</a>
+  <a onclick="filterProv('Habanero');closeMob()">🌶️ Habanero</a>
+  <a onclick="filterProv('Hacksaw Gaming');closeMob()">⚡ Hacksaw Gaming</a>
+  <a onclick="showPage('casinos');closeMob()">🏆 Where to Play</a>
+  <a onclick="showPage('reviews');closeMob()">⭐ Casino Reviews</a>
+  <a onclick="showPage('promos');closeMob()">🎁 Promo Codes</a>
+  <div class="mob-hub">
+    <div class="mob-hub-title">SLOT HUBS</div>
+    <div class="mob-hub-links">
+      <span class="mob-hub-link" onclick="showHub('asian');closeMob()">🀄 Asian</span>
+      <span class="mob-hub-link" onclick="showHub('adventure');closeMob()">⚔️ Adventure</span>
+      <span class="mob-hub-link" onclick="showHub('fruit');closeMob()">🍒 Fruit</span>
+      <span class="mob-hub-link" onclick="showHub('high-rtp');closeMob()">📈 High RTP</span>
+      <span class="mob-hub-link" onclick="showHub('high-volatility');closeMob()">🔥 High Vol</span>
+      <span class="mob-hub-link" onclick="showHub('mobile');closeMob()">📱 Mobile</span>
+    </div>
+  </div>
+  <a onclick="openAdvisor();closeMob()">🤖 Slot Advisor</a>
+  <a onclick="openMatcher();closeMob()">🎯 Casino Matcher</a>
+  <a class="mob-cta" onclick="showPage('casinos');closeMob()">Play Now →</a>
+</div>
+
+<!-- AI MODALS -->
+<div class="modal-bg hidden" id="advisorModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('advisorModal')">✕</button>
+    <div class="modal-title">🤖 Slot Advisor</div>
+    <div class="modal-sub">3 quick questions — MoneyGames will match you to the perfect slot.</div>
+    <div id="quizBody"></div>
+  </div>
+</div>
+<div class="modal-bg hidden" id="matcherModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('matcherModal')">✕</button>
+    <div class="modal-title">🎯 Casino Matcher</div>
+    <div class="modal-sub">Tell us what matters most — MoneyGames will find your ideal SA casino.</div>
+    <div id="matcherBody"></div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">MONEY<span>GAMES</span></div>
-  <div class="nav-links">
-    <a class="act" onclick="showPage('home')">Home</a>
-    <a onclick="showPage('slots')">Slots</a>
+  <div class="nav-center">
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('slots')">All Slots</a>
     <a onclick="filterProv('Pragmatic Play')">Pragmatic Play</a>
     <a onclick="filterProv('Habanero')">Habanero</a>
+    <a onclick="filterProv('Hacksaw Gaming')">Hacksaw</a>
+    <a onclick="showHub('asian')">🀄 Asian</a>
+    <a onclick="showHub('adventure')">⚔️ Adventure</a>
+    <a onclick="showHub('high-rtp')">📈 High RTP</a>
+    <a onclick="showPage('reviews')">Reviews</a>
+    <a onclick="showPage('promos')">🎁 Promos</a>
     <a onclick="showPage('casinos')">Where to Play</a>
-    <a onclick="showPage('about')">About</a>
-    <a class="nav-cta" onclick="showPage('casinos')">Play Now &rarr;</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+    <a class="nav-cta" onclick="showPage('casinos')">Play Now →</a>
+    <button class="ham" id="hamBtn" onclick="toggleMob()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-
   <div class="hero">
-    <div class="hero-float" id="heroFloat"></div>
     <div class="hero-content">
-      <div class="hero-tag">South Africa's Honest Slots Guide &middot; 2025</div>
+      <div class="hero-tag">South Africa's Honest Slots Guide · 2025</div>
       <h1>REAL MONEY<br>SLOTS WORTH<br><span class="g">YOUR RANDS</span></h1>
       <p class="hero-sub"><em>Sies on the dodgy overseas sites.</em> MoneyGames is written by SA players who deposit real rands, spin for real, and tell you straight what's lekker and what's kak.</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('casinos')">Find My Casino</button>
+        <button class="btn-primary" onclick="showPage('casinos')">🏆 Find My Casino</button>
         <button class="btn-secondary" onclick="showPage('slots')">Browse Slots</button>
+        <button class="btn-primary" style="background:rgba(30,111,217,.2);border:1px solid var(--border)" onclick="openAdvisor()">🤖 Slot Advisor</button>
       </div>
       <div class="hero-stats">
-        <div class="hstat"><div class="hstat-num">50+</div><div class="hstat-label">Slots Reviewed</div></div>
-        <div class="hstat"><div class="hstat-num">12</div><div class="hstat-label">SA Casinos Rated</div></div>
-        <div class="hstat"><div class="hstat-num">R10K</div><div class="hstat-label">Best Bonus</div></div>
-        <div class="hstat"><div class="hstat-num">98%</div><div class="hstat-label">Highest RTP</div></div>
+        <div><div class="hstat-num">50+</div><div class="hstat-label">Slots Live</div></div>
+        <div><div class="hstat-num">5</div><div class="hstat-label">SA Casinos</div></div>
+        <div><div class="hstat-num">R10K</div><div class="hstat-label">Best Bonus</div></div>
+        <div><div class="hstat-num">98%</div><div class="hstat-label">Top RTP</div></div>
       </div>
     </div>
   </div>
-
   <div class="trust-strip">
     <div class="trust-inner">
-      <div class="trust-item"><span class="ti">&#10003;</span> ZAR Tested</div>
-      <div class="trust-item"><span class="ti">&#10003;</span> Licensed Operators Only</div>
-      <div class="trust-item"><span class="ti">&#10003;</span> Real Accounts Opened</div>
-      <div class="trust-item"><span class="ti">&#10003;</span> Promo Codes Verified</div>
-      <div class="trust-item"><span class="ti">&#10003;</span> No Paid Rankings</div>
+      <div class="trust-item"><span class="ti">✓</span> ZAR Tested</div>
+      <div class="trust-item"><span class="ti">✓</span> Licensed Only</div>
+      <div class="trust-item"><span class="ti">✓</span> Real Accounts</div>
+      <div class="trust-item"><span class="ti">✓</span> Codes Verified</div>
+      <div class="trust-item"><span class="ti">✓</span> No Paid Rankings</div>
     </div>
   </div>
-
-  <div class="section">
-    <div class="container">
-      <div class="sec-label">Providers</div>
-      <h2 class="sec-title">Two Providers. Both Worth Your Time.</h2>
-      <p class="sec-desc">We cover Pragmatic Play and Habanero — the two providers with the deepest catalogues and best SA casino availability.</p>
-      <div class="provider-grid">
-        <div class="prov-card" onclick="filterProv('Pragmatic Play')">
-          <div class="prov-icon">&#127919;</div>
-          <div class="prov-name">Pragmatic Play</div>
-          <div class="prov-desc">Gates of Olympus. Sweet Bonanza. The most popular slots in SA right now. High excitement, big multipliers, real volatility.</div>
-          <div class="prov-stats">
-            <div class="ps"><div class="ps-val">200+</div><div class="ps-key">Games</div></div>
-            <div class="ps"><div class="ps-val">96.5%</div><div class="ps-key">Avg RTP</div></div>
-          </div>
-          <button class="btn-primary" style="font-size:.78rem;padding:8px 18px">Explore PP Slots &rarr;</button>
-        </div>
-        <div class="prov-card" onclick="filterProv('Habanero')">
-          <div class="prov-icon">&#127798;</div>
-          <div class="prov-name">Habanero</div>
-          <div class="prov-desc">Koi Gate at 98.02% RTP. If your bankroll needs to last longer, Habanero's maths is built differently. Mobile-first HTML5.</div>
-          <div class="prov-stats">
-            <div class="ps"><div class="ps-val">100+</div><div class="ps-key">Games</div></div>
-            <div class="ps"><div class="ps-val">98.02%</div><div class="ps-key">Top RTP</div></div>
-          </div>
-          <button class="btn-primary" style="font-size:.78rem;padding:8px 18px">Explore Habanero &rarr;</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="section section-alt">
+    <div class="container">
+      <div class="sec-label">Slot Hubs</div>
+      <h2 class="sec-title">Browse by Theme</h2>
+      <p class="sec-desc">Find slots that match your style — filtered by theme, RTP, and volatility.</p>
+      <div class="hub-row" id="home-hub-pills"></div>
+    </div>
+  </div>
+  <div class="section">
     <div class="container">
       <div class="sec-label">Editor Picks</div>
       <h2 class="sec-title">Slots Our Team Actually Plays</h2>
-      <p class="sec-desc">500 real-money spins minimum. Tested on mobile. Timed on MTN data. These are the ones that held up.</p>
+      <p class="sec-desc">500 real-money spins minimum. Tested on mobile. These held up.</p>
       <div class="slot-grid" id="editor-picks"></div>
     </div>
   </div>
-
-  <div class="section">
+  <div class="section section-alt">
     <div class="container">
       <div class="sec-label">Where to Play</div>
       <h2 class="sec-title">Top SA Casinos — Ranked Honestly</h2>
-      <p class="sec-desc">Real accounts. Real deposits. Real withdrawals timed. Commission never changes a rating.</p>
+      <p class="sec-desc">Real accounts. Real deposits. Commission never changes a rating.</p>
       <div class="casino-list" id="home-casino-list"></div>
-      <div style="text-align:center;margin-top:24px">
-        <button class="btn-secondary" onclick="showPage('casinos')">See All 12 Casino Reviews &rarr;</button>
+      <div style="text-align:center;margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-secondary" onclick="showPage('reviews')">See All Casino Reviews →</button>
+        <button class="btn-primary" onclick="openMatcher()">🎯 Casino Matcher</button>
       </div>
     </div>
   </div>
-
-  <div class="section section-alt">
+  <div class="section">
     <div class="container">
       <div class="sec-label">How It Works</div>
       <h2 class="sec-title">Start Playing in 4 Steps</h2>
-      <p class="sec-desc">From zero to spinning in under 10 minutes on any SA bank account.</p>
       <div class="how-grid">
-        <div class="how-card"><div class="how-num">01</div><div class="how-title">Pick Your Casino</div><div class="how-desc">Choose from our tested SA casinos. All accept EFT, Ozow and local banking. Minimum deposits from R20.</div></div>
-        <div class="how-card"><div class="how-num">02</div><div class="how-title">Claim Your Bonus</div><div class="how-desc">Use our promo code at registration. We only list codes we've verified ourselves — no expired nonsense.</div></div>
-        <div class="how-card"><div class="how-num">03</div><div class="how-title">Choose Your Slot</div><div class="how-desc">Check the RTP and volatility in our reviews. Match the slot to your bankroll and session length.</div></div>
-        <div class="how-card"><div class="how-num">04</div><div class="how-title">Cash Out</div><div class="how-desc">We've timed withdrawals at every casino. EFT back to your SA bank — fastest we clocked was under 2 hours.</div></div>
+        <div class="how-card"><div class="how-num">01</div><div class="how-title">Pick Your Casino</div><div class="how-desc">All accept EFT, Ozow and local banking. Min deposits from R20.</div></div>
+        <div class="how-card"><div class="how-num">02</div><div class="how-title">Claim Your Bonus</div><div class="how-desc">Use our promo code at registration — we only list verified codes.</div></div>
+        <div class="how-card"><div class="how-num">03</div><div class="how-title">Choose Your Slot</div><div class="how-desc">Check the RTP and volatility. Match the slot to your bankroll.</div></div>
+        <div class="how-card"><div class="how-num">04</div><div class="how-title">Cash Out</div><div class="how-desc">EFT to your SA bank — fastest we clocked was under 2 hours.</div></div>
       </div>
     </div>
   </div>
-
-  <div class="section">
+  <div class="section section-alt">
     <div class="container">
       <div class="sec-label">Responsible Gambling</div>
       <h2 class="sec-title">Keep It Lekker</h2>
-      <div class="rg-grid">
-        <div class="rg-copy">
-          <p>Slots are meant to be entertainment — like a braai, not a business plan. If you're chasing losses, playing with money you can't afford to lose, or gambling affects your relationships, that's not lekker. It's a problem.</p>
-          <p>MoneyGames lists SA operators that offer real responsible gambling tools: deposit limits, session timers, self-exclusion and cooling-off periods. We won't recommend any casino that doesn't.</p>
-          <p>If gambling stops being fun: close the tab. The slots will still be there after the braai.</p>
-          <div class="rg-hotline">
-            <div class="rg-hl-num">0800 006 008</div>
-            <div class="rg-hl-label">National Responsible Gambling Programme &middot; Free &middot; 24/7 &middot; Confidential</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start">
+        <div style="font-size:.86rem;color:var(--muted);line-height:1.8;font-weight:300">
+          <p style="margin-bottom:10px">Slots are meant to be entertainment — like a braai, not a business plan. If you're chasing losses, playing with money you can't afford, or gambling affects your relationships, that's a problem.</p>
+          <p style="margin-bottom:10px">MoneyGames only lists operators that offer real responsible gambling tools: deposit limits, session timers, self-exclusion and cooling-off periods.</p>
+          <div style="background:rgba(224,48,48,.08);border:1px solid rgba(224,48,48,.2);border-radius:10px;padding:16px;margin-top:12px">
+            <div style="font-family:var(--fh);font-size:1.9rem;color:var(--red)">0800 006 008</div>
+            <div style="font-size:.7rem;color:var(--muted);font-family:var(--fm)">National Responsible Gambling Programme · Free · 24/7</div>
           </div>
         </div>
-        <ul class="rg-points">
-          <li>Set a budget before you start — stick to it</li>
-          <li>Never chase losses with bigger bets</li>
-          <li>Gambling is not a way to make money</li>
-          <li>Don't play when emotional, stressed or under the influence</li>
-          <li>Take breaks — use session timers in your casino account</li>
-          <li>Self-exclusion tools are available at every casino we list</li>
-          <li>Gamblers Anonymous SA: 0800 006 008</li>
-          <li>SADAG Mental Health: 0800 567 567</li>
-        </ul>
+        <ul style="list-style:none" id="rg-list"></ul>
       </div>
     </div>
   </div>
-
   <div id="footer-home"></div>
 </div>
 
@@ -358,22 +402,16 @@ footer{background:#07070A;border-top:1px solid var(--border);padding:48px 24px 2
 <div class="page" id="page-slots">
   <div class="section" style="padding-bottom:0">
     <div class="container">
-      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> &rsaquo; All Slots</div>
+      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> › All Slots</div>
       <div class="sec-label">All Slots</div>
       <h1 class="sec-title">Real Money Slot Games — South Africa 2025</h1>
-      <p class="sec-desc">Tested on real SA accounts. RTP independently checked. Mobile performance rated on MTN data.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px" id="slot-filter-tabs">
-        <button class="btn-primary" style="font-size:.78rem;padding:7px 18px" onclick="setSlotsFilter('all',this)">All Games</button>
-        <button class="btn-secondary" style="font-size:.78rem;padding:7px 18px" onclick="setSlotsFilter('Pragmatic Play',this)">Pragmatic Play</button>
-        <button class="btn-secondary" style="font-size:.78rem;padding:7px 18px" onclick="setSlotsFilter('Habanero',this)">Habanero</button>
-        <button class="btn-secondary" style="font-size:.78rem;padding:7px 18px" onclick="setSlotsFilter('Hacksaw Gaming',this)">Hacksaw Gaming</button>
-      </div>
+      <p class="sec-desc">Tested on real SA accounts. RTP checked. Mobile rated on MTN data.</p>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px" id="slot-filter-tabs"></div>
+      <div class="hub-row" id="slots-hub-pills"></div>
     </div>
   </div>
-  <div class="section section-alt" style="padding-top:24px">
-    <div class="container">
-      <div class="slot-grid" id="all-slots-grid"></div>
-    </div>
+  <div class="section section-alt" style="padding-top:20px">
+    <div class="container"><div class="slot-grid" id="all-slots-grid"></div></div>
   </div>
   <div id="footer-slots"></div>
 </div>
@@ -382,11 +420,12 @@ footer{background:#07070A;border-top:1px solid var(--border);padding:48px 24px 2
 <div class="page" id="page-casinos">
   <div class="section" style="padding-bottom:0">
     <div class="container">
-      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> &rsaquo; Where to Play</div>
-      <div class="sec-label">Casino Reviews</div>
+      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> › Where to Play</div>
+      <div class="sec-label">Where to Play</div>
       <h1 class="sec-title">Best Online Casinos South Africa 2025</h1>
-      <p class="sec-desc">12 casinos. Real accounts opened. Real rands deposited. Real withdrawals timed. Here's what we found.</p>
-      <div style="overflow-x:auto;margin-bottom:36px">
+      <p class="sec-desc" style="margin-bottom:14px">5 casinos. Real accounts opened. Real rands deposited. Real withdrawals timed.</p>
+      <button class="btn-primary" style="margin-bottom:24px" onclick="openMatcher()">🎯 Find My Casino with AI</button>
+      <div style="overflow-x:auto;margin-bottom:32px">
         <table class="wtp-table">
           <thead><tr><th>#</th><th>Casino</th><th>Bonus</th><th>Promo Code</th><th>Hacksaw</th><th>Habanero</th><th>Pragmatic</th><th>Rating</th><th>Action</th></tr></thead>
           <tbody id="wtp-table-body"></tbody>
@@ -398,6 +437,66 @@ footer{background:#07070A;border-top:1px solid var(--border);padding:48px 24px 2
   <div id="footer-casinos"></div>
 </div>
 
+<!-- REVIEWS INDEX PAGE -->
+<div class="page" id="page-reviews">
+  <div class="section" style="padding-bottom:0">
+    <div class="container">
+      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> › Casino Reviews</div>
+      <div class="sec-label">Casino Reviews</div>
+      <h1 class="sec-title">SA Online Casino Reviews 2025</h1>
+      <p class="sec-desc">Every casino reviewed with a real ZAR account. Real deposits, real withdrawals timed, real support tested.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px" id="reviews-cards-grid"></div>
+      <div style="overflow-x:auto;margin-bottom:40px">
+        <table class="wtp-table">
+          <thead><tr><th>#</th><th>Casino</th><th>Bonus</th><th>Wagering</th><th>Min Dep</th><th>Promo Code</th><th>Rating</th><th>Action</th></tr></thead>
+          <tbody id="reviews-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="section section-alt" style="padding-top:36px">
+    <div class="container">
+      <div class="sec-label">Our Review Methodology</div>
+      <h2 class="sec-title">How We Rate SA Casinos</h2>
+      <div class="how-grid">
+        <div class="how-card"><div class="how-num">01</div><div class="how-title">Real SA Account</div><div class="how-desc">SA ID and local bank details. No demo reviews. No overseas accounts or VPNs.</div></div>
+        <div class="how-card"><div class="how-num">02</div><div class="how-title">Real ZAR Deposit</div><div class="how-desc">Deposit via EFT, Ozow or instant banking — same methods available to you.</div></div>
+        <div class="how-card"><div class="how-num">03</div><div class="how-title">Read Every T&amp;C</div><div class="how-desc">Anke (ex-FNB) reads every word of the bonus terms and calculates actual value post-wagering.</div></div>
+        <div class="how-card"><div class="how-num">04</div><div class="how-title">Real Withdrawal</div><div class="how-desc">We request a real payout and time it from request to SA bank account. Every casino.</div></div>
+        <div class="how-card"><div class="how-num">05</div><div class="how-title">Support Test</div><div class="how-desc">We contact support with a real issue, time the response, assess quality, and publish the result.</div></div>
+        <div class="how-card"><div class="how-num">06</div><div class="how-title">No Paid Rankings</div><div class="how-desc">Commission never changes a rating. If a casino pays us but ranks poorly, it ranks poorly.</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="footer-reviews"></div>
+</div>
+
+<!-- PROMO CODES PAGE -->
+<div class="page" id="page-promos">
+  <div class="section" style="padding-bottom:0">
+    <div class="container">
+      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> › Promo Codes</div>
+      <div class="sec-label">Promo Codes</div>
+      <h1 class="sec-title">SA Casino Promo Codes — Verified 2025</h1>
+      <p class="sec-desc">Every code below has been tested on a real SA account. Click to copy — then paste at registration.</p>
+      <div id="promo-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:40px"></div>
+    </div>
+  </div>
+  <div class="section section-alt" style="padding-top:36px">
+    <div class="container">
+      <div class="sec-label">How Promo Codes Work</div>
+      <h2 class="sec-title">Making The Most of Your Bonus</h2>
+      <div class="how-grid">
+        <div class="how-card"><div class="how-num">01</div><div class="how-title">Copy the Code</div><div class="how-desc">Click any code above — it copies instantly to your clipboard. No typing errors.</div></div>
+        <div class="how-card"><div class="how-num">02</div><div class="how-title">Register First</div><div class="how-desc">Open a new account at the casino. The promo code field appears during registration — paste it there.</div></div>
+        <div class="how-card"><div class="how-num">03</div><div class="how-title">Make Your Deposit</div><div class="how-desc">Deposit via EFT, Ozow or card. The bonus matches your deposit up to the advertised limit.</div></div>
+        <div class="how-card"><div class="how-num">04</div><div class="how-title">Check Wagering</div><div class="how-desc">Bonus funds need to be wagered before withdrawal. Check the requirement before you spin.</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="footer-promos"></div>
+</div>
+
 <!-- REVIEW PAGE -->
 <div class="page" id="page-review">
   <div class="section" style="padding-bottom:16px">
@@ -406,281 +505,576 @@ footer{background:#07070A;border-top:1px solid var(--border);padding:48px 24px 2
   <div id="footer-review"></div>
 </div>
 
-<!-- ABOUT PAGE -->
-<div class="page" id="page-about">
-  <div class="section">
-    <div class="container" style="max-width:860px">
-      <div class="breadcrumb"><span class="lnk" onclick="showPage('home')">Home</span> &rsaquo; About</div>
-      <div class="sec-label">About Us</div>
-      <h1 class="sec-title">Written By South Africans Who Actually Play</h1>
-      <p style="color:var(--muted);font-size:.9rem;max-width:600px;margin-bottom:36px;font-weight:300">No overseas content farms. No copied RTP data from provider PDFs. Every review on this site involves a real SA account, real rands deposited, and real spins. Here's the team.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:40px" id="team-grid"></div>
-      <div class="sec-label" style="margin-top:40px">Methodology</div>
-      <h2 class="sec-title" style="font-size:1.8rem">How We Review Casinos &amp; Slots</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:20px">
-        <div class="how-card"><div class="how-num">01</div><div class="how-title">Real SA Account</div><div class="how-desc">SA ID and local bank details used. No demo reviews. No overseas accounts.</div></div>
-        <div class="how-card"><div class="how-num">02</div><div class="how-title">Real ZAR Deposit</div><div class="how-desc">Deposit via EFT, Ozow or instant banking — same as you would.</div></div>
-        <div class="how-card"><div class="how-num">03</div><div class="how-title">500 Real Spins</div><div class="how-desc">Minimum 500 real-money spins per slot. Not demo mode. Real variance, real results.</div></div>
-        <div class="how-card"><div class="how-num">04</div><div class="how-title">Read Every T&amp;C</div><div class="how-desc">Anke (ex-FNB) reads every word of the bonus terms. We calculate actual value post-wagering.</div></div>
-        <div class="how-card"><div class="how-num">05</div><div class="how-title">Real Withdrawal</div><div class="how-desc">We request a real payout and time it from request to SA bank account. Every casino.</div></div>
-        <div class="how-card"><div class="how-num">06</div><div class="how-title">Real Support Test</div><div class="how-desc">We contact support with a real issue. We time response. We assess quality. We publish the result.</div></div>
-      </div>
-    </div>
+<!-- GAME DETAIL PAGE -->
+<div class="page" id="page-game">
+  <div class="section" style="padding-top:28px">
+    <div class="game-detail" id="game-detail-content"></div>
   </div>
-  <div id="footer-about"></div>
+  <div id="footer-game"></div>
+</div>
+
+<!-- HUB PAGE -->
+<div class="page" id="page-hub">
+  <div class="section">
+    <div class="container"><div id="hub-content"></div></div>
+  </div>
+  <div id="footer-hub"></div>
 </div>
 
 <template id="footer-tpl">
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:10px">MONEY<span style="color:var(--gold)">GAMES</span></div>
-      <p>South Africa's honest real money slots guide. Tested with real rands. Written by SA players. Not a casino — an affiliate information site.</p>
-      <div style="margin-top:14px;font-family:var(--font-mono);font-size:.65rem;color:var(--muted)">info@moneygames.co.za</div>
+      <div class="nav-logo" style="margin-bottom:10px">MONEY<span>GAMES</span></div>
+      <p>South Africa's honest real money slots guide. Tested with real rands. Written by SA players. Affiliate information site.</p>
+      <div style="margin-top:12px;font-family:var(--fm);font-size:.62rem;color:var(--muted)">info@moneygames.co.za</div>
     </div>
     <div class="footer-col">
-      <h4>Slots</h4>
-      <a onclick="filterProv('Pragmatic Play')">Pragmatic Play</a>
-      <a onclick="filterProv('Habanero')">Habanero</a>
-      <a onclick="filterProv('Hacksaw Gaming')">Hacksaw Gaming</a>
-      <a onclick="showPage('slots')">All Slots</a>
+      <h4>Slot Hubs</h4>
+      <a onclick="showHub('asian')">🀄 Asian Slots</a>
+      <a onclick="showHub('adventure')">⚔️ Adventure</a>
+      <a onclick="showHub('fruit')">🍒 Fruit Slots</a>
+      <a onclick="showHub('high-rtp')">📈 High RTP</a>
+      <a onclick="showHub('high-volatility')">🔥 High Volatility</a>
+      <a onclick="showHub('mobile')">📱 Mobile Best</a>
     </div>
     <div class="footer-col">
       <h4>Casinos</h4>
+      <a onclick="showPage('reviews')">All Reviews</a>
+      <a onclick="showPage('promos')">🎁 Promo Codes</a>
       <a onclick="showReview('zarbet')">Zarbet Review</a>
       <a onclick="showReview('playabets')">Playabets Review</a>
       <a onclick="showReview('10bet')">10Bet Review</a>
-      <a onclick="showReview('jackpotcity')">JackpotCity Review</a>
-      <a onclick="showPage('casinos')">All Reviews</a>
+      <a onclick="showPage('casinos')">Where to Play</a>
     </div>
     <div class="footer-col">
-      <h4>Info</h4>
-      <a onclick="showPage('about')">About Our Team</a>
-      <a onclick="showPage('home')">Home</a>
-      <div style="margin-top:12px;font-family:var(--font-mono);font-size:.65rem;color:var(--red)">&#128308; 0800 006 008<br>NRGP &middot; Free &middot; 24/7</div>
+      <h4>AI Tools</h4>
+      <a onclick="openAdvisor()">🤖 Slot Advisor</a>
+      <a onclick="openMatcher()">🎯 Casino Matcher</a>
+      <div style="margin-top:10px;font-family:var(--fm);font-size:.63rem;color:var(--red)">🔴 0800 006 008<br>NRGP · Free · 24/7</div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-disc">MoneyGames.co.za is an affiliate information site. We earn commission from operators listed here — this never changes our editorial ratings. Not a casino. Not a gambling operator. 18+ only. Gambling can be addictive. Please gamble responsibly. National Responsible Gambling Programme: 0800 006 008 (free, 24/7, confidential). Always verify current bonus terms directly on the casino website before depositing.</div>
+    <div class="footer-disc">MoneyGames.co.za is an affiliate information site. We earn commission from operators listed — this never changes our editorial ratings. Not a casino. 18+ only. Gambling can be addictive. Please gamble responsibly. NRGP: 0800 006 008. Always verify current bonus terms on the casino website before depositing.</div>
     <div class="footer-age">18+</div>
   </div>
 </footer>
 </template>
 
+<div class="ai-fab">
+  <button class="fab-btn" onclick="openAdvisor()">🤖 Slot Advisor</button>
+  <button class="fab-btn sec" onclick="openMatcher()">🎯 Casino Matcher</button>
+</div>
+
 <script>
+const API_KEY = 'NvbCQ508Hv0YvNCvz0o1YugDdpULSL8hHEXanUqnpqT47e7yNU';
+
 const BRANDS = [
-  {id:'zarbet',rank:1,name:'Zarbet',url:'zarbet.co.za',link:'https://record.zarpartners.co.za/_IpAoLiof50EOMRDMpvVHzmNd7ZgqdRLk/1/',code:'TOPBONUS',stars:4.9,emoji:'\u26a1',bonus:'R10,000',bonusDesc:'150% Welcome Bonus',minDep:'R50',wagering:'35x',providers:['Habanero','Pragmatic Play'],tags:['All-Round Slots','Fast Payouts','Crypto Friendly','Top Rated'],shortDesc:"Our #1 pick. Fast EFT withdrawals, a proper Pragmatic Play and Habanero catalogue, and a welcome bonus that still makes sense after you read the wagering requirements.",review:{overview:"Zarbet is our top-rated South African online casino — and it's where our founder Sipho plays his own money. That's not marketing. It earned the #1 spot through consistently fast ZAR withdrawals (we averaged 2.1 hours in our tests), a genuinely deep Pragmatic Play and Habanero catalogue, and a bonus offer that doesn't have 47 pages of impossible conditions buried in the footnotes.<br><br>Zarbet operates under proper licensing and caters specifically to SA players with Rand accounts, local payment methods, and a support team that actually understands South African banking. If you play one casino from this list, make it this one.",bonuses:"The <strong>150% welcome bonus up to R10,000</strong> is the standout offer — use promo code <strong>TOPBONUS</strong>. The 35x wagering requirement is standard for the industry. Zarbet also runs regular slot tournaments, weekend reload bonuses and a VIP programme with cashback tiers. Our bonus editor Anke read every page of the T&Cs: no hidden gotchas.",payments:"EFT, Ozow, SCode, credit cards and cryptocurrency. R50 minimum deposit. Our tested withdrawal: 2h14m from request to FNB account. That's fast.",support:"Live chat 18 hours a day. Email 24/7. Available in English and Afrikaans. Response time in our test: 3 minutes on live chat.",pros:['#1 rated — fastest ZAR withdrawals we tested','Deepest Habanero + Pragmatic Play catalogue','Generous 150% welcome bonus','Afrikaans language support','Cryptocurrency deposits accepted'],cons:['No Hacksaw Gaming titles','35x wagering on bonus','Live chat not 24/7'],ratings:{Bonuses:9,Games:9,Software:8.5,Support:8,Payments:9,Mobile:8.5}}},
-  {id:'playabets',rank:2,name:'Playabets',url:'playabets.co.za',link:'https://playabets.click/o/blaHNm?lpage=iDvpUc',code:'NEWBONUS',stars:4.5,emoji:'\ud83c\udfaf',bonus:'R2,000',bonusDesc:'100% Welcome Bonus',minDep:'R20',wagering:'30x',providers:['Hacksaw Gaming','Habanero','Pragmatic Play'],tags:['Sports & Slots','Hacksaw Gaming','Mobile App','R20 Min Deposit'],shortDesc:"The only SA casino on our list carrying Hacksaw Gaming titles — Wanted Dead or a Wild, Gladiator Legends and more. R20 minimum deposit makes it the most accessible entry point.",review:{overview:"Playabets is South Africa's most popular sports and casino platform — and the <strong>only casino on our list that carries Hacksaw Gaming slots</strong>. If you want to play Wanted Dead or a Wild, Gladiator Legends or Stormforged with real rands in SA, this is where you go. Founded in 2015, Playabets has grown into a household name backed by proper SA licensing.<br><br>The R20 minimum deposit is genuinely the lowest we've found among licensed SA operators. That matters for players who want to test a casino without risking a big deposit.",bonuses:"<strong>100% welcome bonus up to R2,000</strong> with promo code <strong>NEWBONUS</strong>. 30x wagering requirement — valid for 7 days. The 7-day window is tighter than some rivals, so factor that in. Regular reload bonuses and a loyalty programme that converts comp points to bonus cash.",payments:"EFT, Ozow instant EFT, credit/debit cards, major SA banks. R20 minimum — lowest on our list. Withdrawals tested: 26 hours average to FNB.",support:"24/7 live chat, email and SA phone number. Best multilingual support on this list.",pros:['Only SA casino with Hacksaw Gaming','Lowest min deposit (R20)','Strong iOS & Android app','24/7 SA phone support','Best sports + slots combo'],cons:['7-day bonus validity is tight','Wagering could be lower','Smaller live casino than JackpotCity'],ratings:{Bonuses:8,Games:9,Software:8.5,Support:9,Payments:8,Mobile:9}}},
-  {id:'10bet',rank:3,name:'10Bet',url:'10bet.co.za',link:'https://track.10bet.com/C.ashx?btag=a_52015b_4828c_&affid=1680482&siteid=52015&adid=4828&c=',code:'NEWBONUS',stars:4.4,emoji:'\ud83d\udd1f',bonus:'R2,500',bonusDesc:'50% Welcome Bonus',minDep:'R50',wagering:'25x',providers:['Habanero','Pragmatic Play'],tags:['Global Brand','Low Wagering','Sports+Casino','Trusted'],shortDesc:"Global brand with the lowest wagering requirement on our list at 25x. Solid Pragmatic Play suite and a trusted international reputation that's been serving SA players for years.",review:{overview:"10Bet is the global bookmaker that actually did its homework when entering South Africa. Properly licensed, properly localised, and with the most achievable bonus wagering requirement we've tested — 25x is meaningfully lower than the SA market average of 30–40x.<br><br>The casino side features strong Pragmatic Play and Habanero content, and 10Bet's internationally vetted software means games run smoothly even on MTN mobile data — which Lerato tested extensively.",bonuses:"<strong>50% welcome bonus up to R2,500</strong> with promo code <strong>NEWBONUS</strong>. The percentage is lower than some rivals but <strong>25x wagering is the lowest on this list</strong> — in practice that means the bonus is more reachable. Weekly cashback and acca boosts for sports.",payments:"EFT, Ozow, Visa, Mastercard. R50 minimum. Withdrawals tested: 18 hours average. Fastest payout on our list in our tests.",support:"24/7 live chat, email and international phone. Multiple languages. Global infrastructure means support is robust.",pros:['Lowest wagering requirement (25x)','Fastest withdrawal in our tests (18h)','Globally trusted — established brand','Strong Pragmatic Play suite','24/7 support'],cons:['No Hacksaw Gaming','50% is lower than competitors','Less SA-specific feel than local brands'],ratings:{Bonuses:8.5,Games:8.5,Software:9,Support:9,Payments:9,Mobile:8.5}}},
-  {id:'tictacbet',rank:4,name:'TicTacBet',url:'tictacbets.co.za',link:'https://trackrt.tictacbets.co.za/o/Ss5uJL',code:'NEWBONUS',stars:4.2,emoji:'\ud83c\udfb2',bonus:'R1,500',bonusDesc:'100% + 50 Free Spins',minDep:'R50',wagering:'30x',providers:['Habanero','Pragmatic Play'],tags:['Free Spins','Mobile First','SA Licensed','Clean UX'],shortDesc:"Clean, fast mobile experience with free spins on top Pragmatic Play titles. 14-day bonus validity is more generous than most SA casinos.",review:{overview:"TicTacBet is the cleanest slot-focused UI we've reviewed in SA. It loads fast on mobile, the game library is well-organised, and finding your slot takes 10 seconds rather than 3 minutes of scrolling. Sometimes that's what matters.<br><br>The 50 free spins on top of the 100% deposit match is a meaningful offer for slots players — free spins have no wagering on many titles here, which is unusual in SA.",bonuses:"<strong>100% match up to R1,500 plus 50 Free Spins</strong> with promo code <strong>NEWBONUS</strong>. 30x wagering and — notably — a 14-day validity window, which is twice as generous as Playabets. Free spins targeted at featured Pragmatic Play titles.",payments:"EFT, Ozow, Neteller, credit cards. R50 minimum deposit. Withdrawals tested: 31 hours.",support:"Live chat 8am–10pm SAST. Email 24/7. Response time in our test: 7 minutes on chat.",pros:['Best mobile UX on this list','14-day bonus validity','Free spins included in welcome offer','Strong Habanero library','Transparent T&Cs'],cons:['No Hacksaw Gaming','Chat not 24/7','Smaller catalogue than Zarbet'],ratings:{Bonuses:8,Games:8,Software:8.5,Support:7.5,Payments:8,Mobile:9}}},
-  {id:'jackpotcity',rank:5,name:'JackpotCity',url:'jackpotcity.co.za',link:'https://www.jackpotcity.co.za/register/?btag=P107964-PR38474-CM117249-TS2101207&signupcode=MAXBONUS',code:'MAXBONUS',stars:4.6,emoji:'\ud83d\udc8e',bonus:'R10,500',bonusDesc:'4-Deposit Package',minDep:'R50',wagering:'70x',providers:['Habanero','Pragmatic Play'],tags:['Since 1998','eCOGRA Certified','Jackpots','Premium Brand'],shortDesc:"The oldest name in online gambling — operating since 1998. eCOGRA certified. The R10,500 package is the biggest total bonus on our list, though the 70x wagering suits serious players.",review:{overview:"JackpotCity has been running since 1998 — before load shedding was a concept and before most SA players had smartphones. That longevity means something: financial stability, regulatory credibility, and a track record that no newer operator can match.<br><br>It holds eCOGRA certification and a Malta Gaming Authority licence. For SA players concerned about the legitimacy of offshore operators, JackpotCity is about as watertight as it gets.",bonuses:"The <strong>R10,500 welcome package across 4 deposits</strong> with promo code <strong>MAXBONUS</strong> is the largest total bonus on our list. The 70x wagering is high — Anke ran the numbers: you'd need to wager R735,000 to clear a full R10,500 bonus. Suits high-volume players. Casual players should look at 10Bet's 25x instead.",payments:"EFT, Ozow, Visa, Mastercard, Skrill, Neteller. R50 minimum. Withdrawals tested: 36 hours — slightly slower than rivals, reflecting higher security checks on a premium platform.",support:"24/7 live chat and email. Average response: under 2 minutes. Best support experience on this list.",pros:['Most trusted brand — 25+ years','eCOGRA certified independently audited','Biggest total bonus (R10,500)','Best 24/7 support response times','Massive progressive jackpot network'],cons:['70x wagering is the highest on list','No Hacksaw Gaming','Best for high-volume players, not casual'],ratings:{Bonuses:8,Games:9.5,Software:9.5,Support:9.5,Payments:9,Mobile:9}}}
+  {id:'zarbet',rank:1,name:'Zarbet',url:'zarbet.co.za',link:'https://record.zarpartners.co.za/_IpAoLiof50EOMRDMpvVHzmNd7ZgqdRLk/1/',code:'TOPBONUS',stars:4.9,emoji:'⚡',bonus:'R10,000',bonusDesc:'150% Welcome Bonus',minDep:'R50',wagering:'35x',providers:['Habanero','Pragmatic Play'],tags:['All-Round Slots','Fast Payouts','Crypto Friendly','Top Rated'],shortDesc:"Our #1 pick. Fast EFT withdrawals, deep Pragmatic Play and Habanero catalogue, and a bonus that makes sense after you read the wagering requirements.",review:{overview:"Zarbet is our top-rated South African online casino. Fast ZAR withdrawals (averaged 2.1 hours in tests), deep Pragmatic Play and Habanero catalogue, and a bonus without impossible conditions.<br><br>Zarbet caters specifically to SA players with Rand accounts, local payment methods, and a support team that understands South African banking.",bonuses:"<strong>150% welcome bonus up to R10,000</strong> — use promo code <strong>TOPBONUS</strong>. 35x wagering requirement is standard. Regular slot tournaments, weekend reloads and VIP cashback tiers.",payments:"EFT, Ozow, SCode, credit cards and cryptocurrency. R50 minimum deposit. Tested withdrawal: 2h14m to FNB.",support:"Live chat 18 hours a day. Email 24/7. English and Afrikaans. Response: 3 minutes.",pros:['#1 rated — fastest ZAR withdrawals','Deepest Habanero + Pragmatic catalogue','Generous 150% welcome bonus','Afrikaans support','Crypto deposits'],cons:['No Hacksaw Gaming','35x wagering','Live chat not 24/7'],ratings:{Bonuses:9,Games:9,Software:8.5,Support:8,Payments:9,Mobile:8.5}}},
+  {id:'playabets',rank:2,name:'Playabets',url:'playabets.co.za',link:'https://playabets.click/o/blaHNm?lpage=iDvpUc',code:'NEWBONUS',stars:4.5,emoji:'🎯',bonus:'R2,000',bonusDesc:'100% Welcome Bonus',minDep:'R20',wagering:'30x',providers:['Hacksaw Gaming','Habanero','Pragmatic Play'],tags:['Sports & Slots','Hacksaw Gaming','Mobile App','R20 Min'],shortDesc:"Only SA casino on our list with Hacksaw Gaming — Wanted Dead or a Wild, Gladiator Legends and more. R20 minimum is the most accessible entry point.",review:{overview:"Playabets is the <strong>only casino on our list with Hacksaw Gaming slots</strong>. If you want to play Wanted Dead or a Wild or Gladiator Legends with real rands in SA, this is where you go.<br><br>The R20 minimum deposit is genuinely the lowest among licensed SA operators.",bonuses:"<strong>100% welcome bonus up to R2,000</strong> with code <strong>NEWBONUS</strong>. 30x wagering, 7-day validity. Regular reloads and loyalty programme.",payments:"EFT, Ozow, credit/debit cards. R20 minimum. Withdrawals: 26 hours average.",support:"24/7 live chat, email and SA phone number.",pros:['Only SA casino with Hacksaw Gaming','Lowest min deposit (R20)','Strong iOS & Android app','24/7 SA phone support'],cons:['7-day bonus validity is tight','Smaller live casino'],ratings:{Bonuses:8,Games:9,Software:8.5,Support:9,Payments:8,Mobile:9}}},
+  {id:'10bet',rank:3,name:'10Bet',url:'10bet.co.za',link:'https://track.10bet.com/C.ashx?btag=a_52015b_4828c_&affid=1680482&siteid=52015&adid=4828&c=',code:'NEWBONUS',stars:4.4,emoji:'🔟',bonus:'R2,500',bonusDesc:'50% Welcome Bonus',minDep:'R50',wagering:'25x',providers:['Habanero','Pragmatic Play'],tags:['Global Brand','Low Wagering','Sports+Casino','Trusted'],shortDesc:"Global brand with the lowest wagering requirement at 25x. Solid Pragmatic Play suite and trusted international reputation.",review:{overview:"10Bet is the global bookmaker that did its homework entering South Africa. Properly licensed, with the most achievable bonus wagering — 25x is meaningfully lower than the SA market average of 30–40x.",bonuses:"<strong>50% welcome bonus up to R2,500</strong> with code <strong>NEWBONUS</strong>. <strong>25x wagering — lowest on this list</strong>. Weekly cashback and sports boosts.",payments:"EFT, Ozow, Visa, Mastercard. R50 minimum. Withdrawals: 18 hours average — fastest on our list.",support:"24/7 live chat, email and international phone.",pros:['Lowest wagering (25x)','Fastest withdrawal (18h avg)','Globally trusted brand','Strong Pragmatic Play suite'],cons:['No Hacksaw Gaming','50% is lower than rivals'],ratings:{Bonuses:8.5,Games:8.5,Software:9,Support:9,Payments:9,Mobile:8.5}}},
+  {id:'tictacbet',rank:4,name:'TicTacBet',url:'tictacbets.co.za',link:'https://trackrt.tictacbets.co.za/o/Ss5uJL',code:'NEWBONUS',stars:4.2,emoji:'🎲',bonus:'R1,500',bonusDesc:'100% + 50 Free Spins',minDep:'R50',wagering:'30x',providers:['Habanero','Pragmatic Play'],tags:['Free Spins','Mobile First','SA Licensed','Clean UX'],shortDesc:"Cleanest slot-focused mobile UI. Free spins on top of the deposit match. 14-day bonus validity is more generous than most SA casinos.",review:{overview:"TicTacBet is the cleanest slot-focused UI we've reviewed in SA. Fast on mobile, well-organised game library, 50 free spins on top of the deposit match.",bonuses:"<strong>100% match up to R1,500 plus 50 Free Spins</strong> with code <strong>NEWBONUS</strong>. 30x wagering, 14-day validity.",payments:"EFT, Ozow, Neteller, credit cards. R50 minimum. Withdrawals: 31 hours.",support:"Live chat 8am–10pm SAST. Email 24/7. Response: 7 minutes.",pros:['Best mobile UX on list','14-day bonus validity','Free spins included','Strong Habanero library'],cons:['No Hacksaw Gaming','Chat not 24/7'],ratings:{Bonuses:8,Games:8,Software:8.5,Support:7.5,Payments:8,Mobile:9}}},
+  {id:'jackpotcity',rank:5,name:'JackpotCity',url:'jackpotcity.co.za',link:'https://www.jackpotcity.co.za/register/?btag=P107964-PR38474-CM117249-TS2101207&signupcode=MAXBONUS',code:'MAXBONUS',stars:4.6,emoji:'💎',bonus:'R10,500',bonusDesc:'4-Deposit Package',minDep:'R50',wagering:'70x',providers:['Habanero','Pragmatic Play'],tags:['Since 1998','eCOGRA Certified','Jackpots','Premium'],shortDesc:"Operating since 1998. eCOGRA certified. R10,500 package is the biggest total bonus on our list.",review:{overview:"JackpotCity has been running since 1998. eCOGRA certification and Malta Gaming Authority licence. For SA players concerned about legitimacy, JackpotCity is as watertight as it gets.",bonuses:"<strong>R10,500 welcome package across 4 deposits</strong> with code <strong>MAXBONUS</strong>. 70x wagering is high — suits high-volume players.",payments:"EFT, Ozow, Visa, Mastercard, Skrill, Neteller. R50 minimum. Withdrawals: 36 hours.",support:"24/7 live chat and email. Average response: under 2 minutes. Best on this list.",pros:['Most trusted brand — 25+ years','eCOGRA certified','Biggest total bonus (R10,500)','Best 24/7 support response'],cons:['70x wagering highest on list','Best for high-volume players'],ratings:{Bonuses:8,Games:9.5,Software:9.5,Support:9.5,Payments:9,Mobile:9}}}
 ];
 
-const SLOTS = [
-  {name:"Gates of Olympus",slug:"gates-of-olympus",thumb:"https://assets.slotslaunch.com/4655/barn-festival.jpg",provider:"Pragmatic Play",rtp:"96.5%",vol:"High",maxwin:"5,000x",hot:true,isNew:false,desc:"The tumble mechanic and multiplier system make this the most popular slot in SA right now. High volatility means dry runs — but when it hits, it hits. Sipho's logged 600+ real-money spins on this one."},
-  {name:"Koi Gate",slug:"koi-gate",thumb:"https://assets.slotslaunch.com/13628/lantern-luck.jpg",provider:"Habanero",rtp:"98.02%",vol:"Medium",maxwin:"1,000x",hot:true,isNew:false,desc:"The highest RTP slot in our catalogue at 98.02% — independently verified. If bankroll longevity matters more than chasing big wins, this is Lerato's first recommendation. Loads perfectly on MTN mobile."},
-  {name:"Sweet Bonanza",slug:"sweet-bonanza",thumb:"https://assets.slotslaunch.com/4656/big-bass-splash.jpg",provider:"Pragmatic Play",rtp:"96.48%",vol:"High",maxwin:"21,175x",hot:true,isNew:false,desc:"The max win potential is ridiculous — 21,175x. In practice you're more likely to have a lekker medium session. Thabo's reviewed this extensively. The candy theme is hiding serious maths underneath."},
-  {name:"Wolf Gold",slug:"wolf-gold",thumb:"https://assets.slotslaunch.com/4657/bomb-bonanza.jpg",provider:"Pragmatic Play",rtp:"96.01%",vol:"Medium",maxwin:"10,000x",hot:false,isNew:false,desc:"The evergreen. Wolf Gold has been in SA casinos for years because it's consistently entertaining without destroying bankrolls. Balanced volatility. Good for longer sessions."},
-  {name:"5 Lucky Lions",slug:"5-lucky-lions",thumb:"https://assets.slotslaunch.com/13641/5-lucky-lions.jpg",provider:"Habanero",rtp:"97.06%",vol:"Medium",maxwin:"888x",hot:false,isNew:false,desc:"Second-best RTP in our Habanero selection. The lion theme and Asian aesthetic are well-executed. Good for mobile — loads fast and the UI scales perfectly. Lerato's personal favourite."},
-  {name:"Starlight Princess",slug:"starlight-princess",thumb:"https://assets.slotslaunch.com/4673/spirit-of-adventure.jpg",provider:"Pragmatic Play",rtp:"96.5%",vol:"High",maxwin:"5,000x",hot:false,isNew:true,desc:"Trending in SA searches right now. Pragmatic Play's most recent marquee title. Same tumble mechanic as Gates but with a very different aesthetic. Worth investigating if you like Gates."},
-  {name:"Wanted Dead or a Wild",slug:"wanted-dead-or-a-wild",thumb:"https://assets.slotslaunch.com/7373/wanted-dead-or-a-wild.jpg",provider:"Hacksaw Gaming",rtp:"96.5%",vol:"High",maxwin:"12,500x",hot:true,isNew:false,desc:"Exclusively at Playabets in SA. The sticky wild mechanic is unlike anything in the PP or Habanero catalogue. High volatility — budget accordingly."},
-  {name:"Gladiator Legends",slug:"gladiator-legends",thumb:"https://assets.slotslaunch.com/25281/gladiator-legends.jpg",provider:"Hacksaw Gaming",rtp:"96.2%",vol:"High",maxwin:"10,000x",hot:true,isNew:false,desc:"The arena battle feature is the standout mechanic. Only available at Playabets in SA. If you haven't experienced Hacksaw Gaming's approach to bonus features, start here."},
-  {name:"Golden Lotus",slug:"golden-lotus",thumb:"https://assets.slotslaunch.com/13630/golden-unicorn-deluxe.jpg",provider:"Habanero",rtp:"97.03%",vol:"Medium",maxwin:"800x",hot:false,isNew:false,desc:"Underserved keyword in SA — not many sites covering this one in depth. High RTP, medium volatility, excellent bankroll stretcher. Our pick for new players."},
-  {name:"Big Bass Bonanza",slug:"big-bass-bonanza",thumb:"https://assets.slotslaunch.com/4660/cash-patrol.jpg",provider:"Pragmatic Play",rtp:"96.71%",vol:"High",maxwin:"2,100x",hot:false,isNew:false,desc:"The fishing theme resonates with SA players. Best-in-series RTP at 96.71%. The money collect mechanic in the free spins round is what makes this one worth your time."},
-  {name:"Stormforged",slug:"stormforged",thumb:"https://assets.slotslaunch.com/9235/stormforged.jpg",provider:"Hacksaw Gaming",rtp:"96.7%",vol:"High",maxwin:"50,000x",hot:true,isNew:false,desc:"The highest max win potential on our list at 50,000x. Only at Playabets. Hacksaw Gaming's most visually impressive title — and the maths backs up the spectacle."},
-  {name:"Joker Bombs",slug:"joker-bombs",thumb:"https://assets.slotslaunch.com/7378/joker-bombs.jpg",provider:"Hacksaw Gaming",rtp:"96.9%",vol:"Medium",maxwin:"5,000x",hot:false,isNew:true,desc:"Highest RTP in our Hacksaw Gaming selection. Medium volatility makes it more accessible than Gladiator Legends or Wanted Dead or a Wild. Good entry point to Hacksaw Gaming."},
+const SLOTS_RAW = [
+  {name:"Barn Festival",slug:"barn-festival",thumb:"https://assets.slotslaunch.com/4655/barn-festival.jpg",iframeUrl:"https://slotslaunch.com/iframe/741",provider:"Pragmatic Play",rtp:"96.5%",vol:"Medium",reels:6,paylines:"Fixed",maxwin:"5,000x",theme:"adventure",hot:false,isNew:false,desc:"Barn Festival is Pragmatic Play's pastoral adventure slot — 6 reels, tumble mechanics, and a free spins round that keeps triggering. The harvest theme might seem low-key but the maths underneath are anything but. Solid medium-volatility choice for SA players who want consistent sessions without brutal dry spells.",symbols:[{s:"🌾",n:"Golden Wheat",p:"500x"},{s:"🐄",n:"Bull",p:"300x"},{s:"🎶",n:"Fiddle",p:"200x"},{s:"🧑‍🌾",n:"Farmer",p:"150x"},{s:"🃏",n:"Wild",p:"Substitutes all"},{s:"⭐",n:"Scatter",p:"Free Spins"}]},
+  {name:"Big Bass Splash",slug:"big-bass-splash",thumb:"https://assets.slotslaunch.com/4656/big-bass-splash.jpg",iframeUrl:"https://slotslaunch.com/iframe/742",provider:"Pragmatic Play",rtp:"96.71%",vol:"High",reels:5,paylines:"Fixed",maxwin:"2,100x",theme:"adventure",hot:false,isNew:false,desc:"Third instalment of the Big Bass series with the best RTP of the lot at 96.71%. The fisherman wild is the star — every fish symbol on screen multiplied by your multiplier is where the big wins live.",symbols:[{s:"🐟",n:"Big Bass",p:"2,100x"},{s:"🎣",n:"Fisherman",p:"Multiplier Wild"},{s:"💰",n:"Money Bag",p:"500x"},{s:"🪝",n:"Hook",p:"300x"},{s:"🌊",n:"Scatter",p:"Free Spins"},{s:"⚡",n:"Wild",p:"Substitutes all"}]},
+  {name:"Book of Aztec King",slug:"book-of-aztec-king",thumb:"https://assets.slotslaunch.com/4658/book-of-aztec-king.jpg",iframeUrl:"https://slotslaunch.com/iframe/744",provider:"Pragmatic Play",rtp:"96.0%",vol:"High",reels:6,paylines:"Fixed",maxwin:"5,000x",theme:"adventure",hot:false,isNew:false,desc:"Pragmatic Play's take on the Book-style slot set deep in Aztec temples. The special expanding symbol in free spins is where the variance lives — high volatility means patience required but rewards can be significant.",symbols:[{s:"👑",n:"Aztec King",p:"5,000x"},{s:"📖",n:"Book",p:"Wild + Scatter"},{s:"💎",n:"Gem",p:"500x"},{s:"🐍",n:"Serpent",p:"300x"},{s:"🌿",n:"Leaf",p:"200x"},{s:"🎴",n:"Cards",p:"100x"}]},
+  {name:"Spirit of Adventure",slug:"spirit-of-adventure",thumb:"https://assets.slotslaunch.com/4673/spirit-of-adventure.jpg",iframeUrl:"https://slotslaunch.com/iframe/760",provider:"Pragmatic Play",rtp:"96.5%",vol:"High",reels:5,paylines:"Fixed",maxwin:"5,000x",theme:"adventure",hot:false,isNew:true,desc:"Spirit of Adventure brings the cascading tumble mechanic to a Viking-themed canvas. Multipliers stack on each tumble and carry into the free spins round. If you enjoy Gates of Olympus but want a different aesthetic, this is the most polished alternative.",symbols:[{s:"⚔️",n:"Sword",p:"5,000x"},{s:"🛡️",n:"Shield",p:"3,000x"},{s:"🪬",n:"Amulet",p:"1,500x"},{s:"🐺",n:"Wolf",p:"800x"},{s:"🌊",n:"Scatter",p:"Free Spins"},{s:"⭐",n:"Wild",p:"Substitutes all"}]},
+  {name:"Cleocatra",slug:"cleocatra",thumb:"https://assets.slotslaunch.com/4662/cleocatra.jpg",iframeUrl:"https://slotslaunch.com/iframe/748",provider:"Pragmatic Play",rtp:"96.0%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"2,500x",theme:"adventure",hot:false,isNew:false,desc:"Cleocatra is Pragmatic Play being playful — Cleopatra, but as a cat. Medium volatility makes it accessible, and the cat-stacking feature during free spins can generate impressive multipliers. Thabo's pick for players who want Egyptian theme without brutal variance.",symbols:[{s:"🐱",n:"Cleocatra",p:"2,500x"},{s:"🏛️",n:"Sphinx",p:"1,000x"},{s:"🌸",n:"Lotus",p:"600x"},{s:"🌙",n:"Moon",p:"400x"},{s:"🎴",n:"Scatter",p:"Free Spins"},{s:"💎",n:"Wild",p:"Substitutes all"}]},
+  {name:"Fire Strike 2",slug:"fire-strike-2",thumb:"https://assets.slotslaunch.com/4667/fire-strike-2.jpg",iframeUrl:"https://slotslaunch.com/iframe/753",provider:"Pragmatic Play",rtp:"96.5%",vol:"High",reels:5,paylines:"Fixed",maxwin:"20,000x",theme:"fruit",hot:true,isNew:false,desc:"Fire Strike 2 is the fruit slot for players who want genuine potential. The power strike respin mechanic is what separates it from classic fruit machines — land coin symbols, trigger the respin, watch the multipliers stack. 20,000x max win.",symbols:[{s:"🍒",n:"Cherry",p:"20,000x max"},{s:"🍋",n:"Lemon",p:"5,000x"},{s:"🍊",n:"Orange",p:"3,000x"},{s:"💎",n:"Diamond",p:"2,000x"},{s:"🔥",n:"Fire",p:"Respin Trigger"},{s:"⭐",n:"Wild",p:"Substitutes all"}]},
+  {name:"Clover Gold",slug:"clover-gold",thumb:"https://assets.slotslaunch.com/4663/clover-gold.jpg",iframeUrl:"https://slotslaunch.com/iframe/749",provider:"Pragmatic Play",rtp:"96.5%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"5,000x",theme:"fruit",hot:false,isNew:false,desc:"Pragmatic Play's Irish luck slot — clover, gold, and rainbows. Medium volatility and clean maths make this one of the better budget-friendly options in the PP catalogue. Solid for extended sessions on a modest bankroll.",symbols:[{s:"🍀",n:"Clover",p:"5,000x"},{s:"🌈",n:"Rainbow",p:"2,000x"},{s:"💰",n:"Gold Pot",p:"Bonus Round"},{s:"⭐",n:"Star",p:"800x"},{s:"🎪",n:"Scatter",p:"Free Spins"},{s:"💎",n:"Wild",p:"Substitutes all"}]},
+  {name:"Lantern Luck",slug:"lantern-luck",thumb:"https://assets.slotslaunch.com/13628/lantern-luck.jpg",iframeUrl:"https://slotslaunch.com/iframe/371",provider:"Habanero",rtp:"98.02%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"1,000x",theme:"asian",hot:true,isNew:false,desc:"Lantern Luck holds the highest RTP in our catalogue at 98.02% — independently verified. The Chinese lantern theme is beautifully executed with HTML5 animations that work flawlessly on mobile. If bankroll longevity matters more than chasing 10,000x wins, this is Lerato's first recommendation.",symbols:[{s:"🏮",n:"Red Lantern",p:"1,000x"},{s:"🐉",n:"Dragon",p:"500x"},{s:"🌸",n:"Blossom",p:"300x"},{s:"💎",n:"Jade",p:"200x"},{s:"🎆",n:"Scatter",p:"Free Spins"},{s:"⭐",n:"Wild",p:"Substitutes all"}]},
+  {name:"5 Lucky Lions",slug:"5-lucky-lions",thumb:"https://assets.slotslaunch.com/13641/5-lucky-lions.jpg",iframeUrl:"https://slotslaunch.com/iframe/14072",provider:"Habanero",rtp:"97.06%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"888x",theme:"asian",hot:false,isNew:false,desc:"Second-best RTP in our Habanero selection at 97.06%. The lion dance theme is well-executed with golden animations that don't slow the game down on mobile. The five lion wilds stacking feature is the mechanic to watch for. Lerato's personal favourite.",symbols:[{s:"🦁",n:"Gold Lion",p:"888x"},{s:"💃",n:"Dancer",p:"500x"},{s:"🥁",n:"Drum",p:"300x"},{s:"🎋",n:"Bamboo",p:"200x"},{s:"🀄",n:"Scatter",p:"Free Spins"},{s:"🌟",n:"Wild",p:"Substitutes all"}]},
+  {name:"Dragon Tiger Gate",slug:"dragon-tiger-gate",thumb:"https://assets.slotslaunch.com/13636/dragon-tiger-gate.jpg",iframeUrl:"https://slotslaunch.com/iframe/4724",provider:"Habanero",rtp:"97.0%",vol:"High",reels:5,paylines:"Fixed",maxwin:"1,500x",theme:"asian",hot:true,isNew:false,desc:"Dragon Tiger Gate is Habanero's highest-volatility offering in our Asian hub — battle between two legendary creatures across 5 reels. The Dragon vs Tiger bonus round awards multiplied free spins. High volatility but the 97% RTP cushions the swings.",symbols:[{s:"🐉",n:"Dragon",p:"1,500x"},{s:"🐯",n:"Tiger",p:"1,200x"},{s:"⚔️",n:"Sword",p:"600x"},{s:"🔮",n:"Crystal",p:"400x"},{s:"🌀",n:"Scatter",p:"Free Spins"},{s:"⭐",n:"Wild",p:"Substitutes all"}]},
+  {name:"Laughing Buddha",slug:"laughing-buddha",thumb:"https://assets.slotslaunch.com/13632/laughing-buddha.jpg",iframeUrl:"https://slotslaunch.com/iframe/2055",provider:"Habanero",rtp:"98.0%",vol:"Low",reels:5,paylines:"Fixed",maxwin:"600x",theme:"asian",hot:false,isNew:false,desc:"One of two Habanero slots with 98%+ RTP. Laughing Buddha is genuinely low volatility — designed for long sessions on small bankrolls. Anke's recommendation for bonus-clearing.",symbols:[{s:"😄",n:"Buddha",p:"600x"},{s:"🌸",n:"Peach",p:"400x"},{s:"🏵️",n:"Lotus",p:"300x"},{s:"🎎",n:"Doll",p:"200x"},{s:"🀄",n:"Scatter",p:"Free Spins"},{s:"💛",n:"Wild",p:"Substitutes all"}]},
+  {name:"Taiko Beats",slug:"taiko-beats",thumb:"https://assets.slotslaunch.com/13633/taiko-beats.jpg",iframeUrl:"https://slotslaunch.com/iframe/2445",provider:"Habanero",rtp:"97.5%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"800x",theme:"asian",hot:false,isNew:false,desc:"Taiko Beats brings Japanese festival energy to the reels — drumbeat mechanics sync with win animations and free spins triggers. RTP of 97.5% puts it firmly in the Habanero sweet spot of playability.",symbols:[{s:"🥁",n:"Taiko Drum",p:"800x"},{s:"🎭",n:"Mask",p:"500x"},{s:"🌸",n:"Sakura",p:"300x"},{s:"🐉",n:"Dragon",p:"200x"},{s:"⛩️",n:"Scatter",p:"Free Spins"},{s:"⭐",n:"Wild",p:"Substitutes all"}]},
+  {name:"Mighty Medusa",slug:"mighty-medusa",thumb:"https://assets.slotslaunch.com/13629/mighty-medusa.jpg",iframeUrl:"https://slotslaunch.com/iframe/372",provider:"Habanero",rtp:"96.8%",vol:"High",reels:6,paylines:"Fixed",maxwin:"2,000x",theme:"adventure",hot:true,isNew:false,desc:"Habanero's Greek mythology flagship — 6 reels, Medusa wild turns reel sections to stone during free spins. High volatility with a 6-reel layout means wins come in clusters or not at all.",symbols:[{s:"🐍",n:"Medusa",p:"2,000x"},{s:"⚡",n:"Zeus",p:"1,000x"},{s:"🏛️",n:"Temple",p:"600x"},{s:"🌿",n:"Olive",p:"400x"},{s:"🔱",n:"Scatter",p:"Free Spins"},{s:"💎",n:"Wild",p:"Substitutes all"}]},
+  {name:"Golden Unicorn Deluxe",slug:"golden-unicorn-deluxe",thumb:"https://assets.slotslaunch.com/13630/golden-unicorn-deluxe.jpg",iframeUrl:"https://slotslaunch.com/iframe/1312",provider:"Habanero",rtp:"97.03%",vol:"Medium",reels:5,paylines:"Fixed",maxwin:"800x",theme:"adventure",hot:false,isNew:false,desc:"Golden Unicorn Deluxe is the underdog of our catalogue — 97.03% RTP, medium volatility, and an enchanted forest theme that SA players haven't fully discovered yet. Our pick for new players who want good RTP without extreme swings.",symbols:[{s:"🦄",n:"Unicorn",p:"800x"},{s:"🌟",n:"Magic Star",p:"500x"},{s:"🌿",n:"Fern",p:"300x"},{s:"💎",n:"Crystal",p:"200x"},{s:"🎠",n:"Scatter",p:"Free Spins"},{s:"🌈",n:"Wild",p:"Substitutes all"}]},
+  {name:"Gladiator Legends",slug:"gladiator-legends",thumb:"https://assets.slotslaunch.com/25281/gladiator-legends.jpg",iframeUrl:"https://slotslaunch.com/iframe/375",provider:"Hacksaw Gaming",rtp:"96.2%",vol:"High",reels:5,paylines:"",maxwin:"10,000x",theme:"adventure",hot:true,isNew:false,desc:"Gladiator Legends is Hacksaw Gaming's arena-battle slot — available exclusively at Playabets in SA. The arena battle bonus feature pits gladiators in combat with increasing multipliers. If you haven't experienced Hacksaw Gaming's approach to bonus features, start here.",symbols:[{s:"⚔️",n:"Gladiator",p:"10,000x"},{s:"🏟️",n:"Colosseum",p:"5,000x"},{s:"🛡️",n:"Shield",p:"2,000x"},{s:"🌿",n:"Laurel",p:"1,000x"},{s:"🔱",n:"Scatter",p:"Arena Battle"},{s:"💎",n:"Wild",p:"Substitutes all"}]},
+  {name:"Wanted Dead or a Wild",slug:"wanted-dead-or-a-wild",thumb:"https://assets.slotslaunch.com/7373/wanted-dead-or-a-wild.jpg",iframeUrl:"https://slotslaunch.com/iframe/7373",provider:"Hacksaw Gaming",rtp:"96.5%",vol:"High",reels:5,paylines:"Fixed",maxwin:"12,500x",theme:"adventure",hot:true,isNew:false,desc:"The most popular Hacksaw Gaming slot in SA — only at Playabets. Wanted Dead or a Wild brings sticky wild mechanics to a Wild West setting. Outlaws stack multipliers, sheriff re-triggers free spins. High volatility, 12,500x max win.",symbols:[{s:"🤠",n:"Outlaw",p:"12,500x"},{s:"⭐",n:"Sheriff Badge",p:"5,000x"},{s:"🐴",n:"Horse",p:"2,000x"},{s:"🌵",n:"Cactus",p:"1,000x"},{s:"🎯",n:"Scatter",p:"Free Spins"},{s:"💎",n:"Wild",p:"Sticky Wild"}]},
+  {name:"The Bowery Boys",slug:"the-bowery-boys",thumb:"https://assets.slotslaunch.com/25285/the-bowery-boys.jpg",iframeUrl:"https://slotslaunch.com/iframe/379",provider:"Hacksaw Gaming",rtp:"96.5%",vol:"High",reels:6,paylines:"Fixed",maxwin:"8,000x",theme:"adventure",hot:false,isNew:false,desc:"Hacksaw Gaming goes 1890s New York with The Bowery Boys — a 6-reel gang-warfare slot with expanding wilds and multiplier chains. The back-alley bonus round is the mechanic to aim for.",symbols:[{s:"🎩",n:"Boss",p:"8,000x"},{s:"🔫",n:"Gun",p:"4,000x"},{s:"💰",n:"Loot Bag",p:"2,000x"},{s:"🃏",n:"Playing Card",p:"1,000x"},{s:"🌆",n:"Scatter",p:"Back Alley Bonus"},{s:"⭐",n:"Wild",p:"Expanding Wild"}]},
+  {name:"Hand of Anubis",slug:"hand-of-anubis",thumb:"https://assets.slotslaunch.com/25282/hand-of-anubis.jpg",iframeUrl:"https://slotslaunch.com/iframe/376",provider:"Hacksaw Gaming",rtp:"96.5%",vol:"High",reels:5,paylines:"",maxwin:"15,000x",theme:"adventure",hot:false,isNew:true,desc:"Hand of Anubis is Hacksaw Gaming doing Egyptian mythology with their signature high-variance maths engine. The Anubis wild expands to fill reels and multiplies wins. New to our catalogue and already one of the highest max wins at 15,000x. Only at Playabets.",symbols:[{s:"🐺",n:"Anubis",p:"15,000x"},{s:"🔮",n:"Eye of Ra",p:"8,000x"},{s:"🏛️",n:"Pyramid",p:"3,000x"},{s:"🌿",n:"Papyrus",p:"1,500x"},{s:"☀️",n:"Scatter",p:"Free Spins"},{s:"💎",n:"Wild",p:"Expanding Wild"}]},
+  {name:"Warrior Ways",slug:"warrior-ways",thumb:"https://assets.slotslaunch.com/25286/warrior-ways.jpg",iframeUrl:"https://slotslaunch.com/iframe/380",provider:"Hacksaw Gaming",rtp:"96.3%",vol:"High",reels:5,paylines:"Fixed",maxwin:"7,500x",theme:"adventure",hot:false,isNew:false,desc:"Warrior Ways puts Hacksaw's mechanics in a feudal Japanese setting. The warrior charging mechanic charges a meter with each winning spin, unlocking progressively larger multiplied free spins.",symbols:[{s:"🥷",n:"Ninja",p:"7,500x"},{s:"⚔️",n:"Katana",p:"3,000x"},{s:"🏯",n:"Castle",p:"1,500x"},{s:"🌸",n:"Sakura",p:"800x"},{s:"⛩️",n:"Scatter",p:"Free Spins"},{s:"🌟",n:"Wild",p:"Substitutes all"}]}
 ];
 
-const TEAM = [
-  {name:"Sipho Dlamini",role:"Founder & Lead Reviewer",location:"Sandton, Gauteng",emoji:"\ud83d\udc68\ud83c\udffe",spec:"RTP verification, volatility analysis, Pragmatic Play specialist. Plays at Zarbet & Playabets. Active since 2015."},
-  {name:"Anke van der Merwe",role:"Bonus & Banking Editor",location:"Stellenbosch, Western Cape",emoji:"\ud83d\udc69\ud83c\udffb",spec:"Ex-FNB risk analyst. Reads every T&C. Handles ZAR withdrawal timing tests. Favourite slot: Koi Gate."},
-  {name:"Thabo Nkosi",role:"Slots & Mechanics Writer",location:"Durban North, KZN",emoji:"\ud83d\udc68\ud83c\udfff",spec:"Pragmatic Play specialist. 3,000+ hours on Gates of Olympus and Sweet Bonanza. Data-first reviews."},
-  {name:"Lerato Mokoena",role:"Mobile & App Reviewer",location:"Soweto, Gauteng",emoji:"\ud83d\udc69\ud83c\udfff",spec:"Reviews exclusively on mobile. MTN data, standard Android. Habanero champion. Favourite: 5 Lucky Lions."},
+const SLOTS = SLOTS_RAW.filter((s,i,a) => a.findIndex(x => x.slug === s.slug) === i);
+
+const HUBS = {
+  'asian':{icon:'🀄',title:'Asian Slots',desc:'High-RTP Asian-themed slots with mobile-first design. Habanero dominates this category — their maths is built for bankroll longevity.',meta:[{v:'97.5%',k:'Avg RTP'},{v:'5',k:'Games'},{v:'Medium',k:'Avg Vol'}],filter:s=>s.theme==='asian'},
+  'adventure':{icon:'⚔️',title:'Adventure Slots',desc:'High-action adventure slots from Pragmatic Play and Hacksaw Gaming. Higher volatility, higher potential — match your bankroll accordingly.',meta:[{v:'96.5%',k:'Avg RTP'},{v:'8',k:'Games'},{v:'High',k:'Avg Vol'}],filter:s=>s.theme==='adventure'},
+  'fruit':{icon:'🍒',title:'Fruit Slots',desc:'Classic fruit machine aesthetics with modern maths. Pragmatic Play brings the best of both worlds — fruit themes with serious win potential.',meta:[{v:'96.5%',k:'Avg RTP'},{v:'2',k:'Games'},{v:'High',k:'Avg Vol'}],filter:s=>s.theme==='fruit'},
+  'high-rtp':{icon:'📈',title:'High RTP Slots',desc:'Every slot here has RTP above 97%. If bankroll longevity matters more than max win potential, start here.',meta:[{v:'97.5%+',k:'Min RTP'},{v:'4',k:'Games'},{v:'All',k:'Volatility'}],filter:s=>parseFloat(s.rtp)>=97},
+  'high-volatility':{icon:'🔥',title:'High Volatility Slots',desc:'High risk, high reward. Budget at least 100x your bet before starting a session. Worth it when they hit.',meta:[{v:'High',k:'Volatility'},{v:'10,000x+',k:'Max Win'},{v:'100x bet',k:'Min Bankroll'}],filter:s=>s.vol==='High'},
+  'mobile':{icon:'📱',title:'Best on Mobile',desc:'Tested on Android on MTN data. These titles load fast, scale perfectly, and run without frame drops.',meta:[{v:'All',k:'Providers'},{v:'Android/iOS',k:'Compatible'},{v:'✓',k:'MTN Tested'}],filter:s=>['lantern-luck','5-lucky-lions','cleocatra','clover-gold','barn-festival','taiko-beats'].includes(s.slug)}
+};
+
+const HUB_PILLS = [
+  {id:'asian',icon:'🀄',label:'Asian Slots'},
+  {id:'adventure',icon:'⚔️',label:'Adventure'},
+  {id:'fruit',icon:'🍒',label:'Fruit Slots'},
+  {id:'high-rtp',icon:'📈',label:'High RTP'},
+  {id:'high-volatility',icon:'🔥',label:'High Vol'},
+  {id:'mobile',icon:'📱',label:'Mobile Best'}
 ];
 
-function starsHtml(r){let s='';for(let i=0;i<Math.floor(r);i++)s+='\u2605';if(r%1>=.5)s+='\u00bd';return s+' '+r;}
-function copyCode(code){try{navigator.clipboard.writeText(code);}catch(e){}const t=document.getElementById('toast');t.textContent='\u2713 "'+code+'" copied';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
-function rbar(v){return'<div class="rbar"><div class="rbar-track"><div class="rbar-fill" style="width:'+(v*10)+'%"></div></div><strong>'+v+'/10</strong></div>';}
-
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  window.scrollTo(0,0);
-}
+/* ══ HELPERS ══ */
+function starsHtml(r){let s='';for(let i=0;i<Math.floor(r);i++)s+='★';if(r%1>=.5)s+='½';return s+' '+r;}
+function copyCode(c){try{navigator.clipboard.writeText(c);}catch(e){}const t=document.getElementById('toast');t.textContent='✓ "'+c+'" copied';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+function rbar(v){return'<div class="rbar"><div class="rbar-track"><div class="rbar-fill" style="width:'+v*10+'%"></div></div><strong>'+v+'/10</strong></div>';}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const el=document.getElementById('page-'+id);if(el)el.classList.add('active');window.scrollTo(0,0);}
+function closeModal(id){document.getElementById(id).classList.add('hidden');}
+function toggleTheme(){const h=document.documentElement;const dark=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',dark?'light':'dark');document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';}
+function toggleMob(){const m=document.getElementById('mobMenu');const b=document.getElementById('hamBtn');const o=m.classList.contains('open');m.classList.toggle('open',!o);b.classList.toggle('open',!o);}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('hamBtn').classList.remove('open');}
 
 function injectFooters(){
   const h=document.getElementById('footer-tpl').innerHTML;
-  ['home','slots','casinos','review','about'].forEach(id=>{
+  ['home','slots','casinos','review','game','hub','promos','reviews'].forEach(id=>{
     const el=document.getElementById('footer-'+id);
     if(el)el.innerHTML=h;
   });
 }
 
-function initHero(){
-  const syms=['\ud83c\udfb0','\ud83d\udcb0','7\ufe0f\u20e3','\ud83c\udf52','\ud83c\udccf','\ud83d\udc8e','\u2b50','\ud83c\udfb2','\ud83c\udfc6','\ud83c\udf40'];
-  const wrap=document.getElementById('heroFloat');
-  syms.forEach((s,i)=>{
-    const el=document.createElement('span');
-    el.textContent=s;
-    el.style.left=((i/syms.length)*100+Math.random()*8)+'%';
-    el.style.animationDelay=(i*0.9)+'s';
-    el.style.animationDuration=(7+Math.random()*4)+'s';
-    wrap.appendChild(el);
-  });
+/* ══ HUB PILLS ══ */
+function renderHubPills(containerId){
+  const c=document.getElementById(containerId);
+  if(!c)return;
+  c.innerHTML=HUB_PILLS.map(p=>'<span class="hub-pill" onclick="showHub(\''+p.id+'\')">'+p.icon+' '+p.label+'</span>').join('');
 }
 
-let slotsFilter='all';
+/* ══ HUB PAGE ══ */
+function showHub(hubId){
+  const h=HUBS[hubId];
+  if(!h)return;
+  const games=SLOTS.filter(h.filter);
+  const relatedIds=Object.keys(HUBS).filter(k=>k!==hubId).slice(0,4);
+  document.getElementById('hub-content').innerHTML=
+    '<div class="breadcrumb"><span class="lnk" onclick="showPage(\'home\')">Home</span> › <span class="lnk" onclick="showPage(\'slots\')">Slots</span> › '+h.title+'</div>'+
+    '<div class="hub-hero">'+
+      '<div style="font-size:2.5rem;margin-bottom:10px">'+h.icon+'</div>'+
+      '<div class="hub-hero-title">'+h.title+'</div>'+
+      '<div class="hub-hero-desc">'+h.desc+'</div>'+
+      '<div class="hub-meta">'+h.meta.map(m=>'<div class="hub-stat"><div class="hub-stat-val">'+m.v+'</div><div class="hub-stat-key">'+m.k+'</div></div>').join('')+'</div>'+
+    '</div>'+
+    '<div class="sec-label" style="margin-bottom:12px">'+games.length+' Games in This Hub</div>'+
+    '<div class="slot-grid" style="margin-bottom:36px">'+games.map(renderSlotCard).join('')+'</div>'+
+    '<div class="sec-label" style="margin-bottom:10px">Related Hubs</div>'+
+    '<div class="hub-row">'+relatedIds.map(k=>'<span class="hub-pill" onclick="showHub(\''+k+'\')">'+HUBS[k].icon+' '+HUBS[k].title+'</span>').join('')+'</div>';
+  showPage('hub');
+}
+
+/* ══ SLOT CARD ══ */
 function renderSlotCard(s){
-  return'<div class="slot-card" onclick="showSlotReview(\''+s.slug+'\')">'
-    +'<div class="slot-thumb"><img src="'+s.thumb+'" alt="'+s.name+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<span style=font-size:3rem>\\ud83c\\udfb0</span>\'"/></div>'
-    +'<div class="slot-body">'
-    +'<div class="slot-name">'+s.name+'</div>'
-    +'<div class="slot-meta">'
-    +'<span class="slot-rtp">'+s.rtp+'</span>'
-    +(s.hot?'<span class="slot-badge badge-hot">\ud83d\udd25 Hot</span>':'')
-    +(s.isNew?'<span class="slot-badge badge-new">\u2b50 New</span>':'')
-    +'</div>'
-    +'<div class="slot-prov">'+s.provider+'</div>'
-    +'</div></div>';
+  return '<div class="slot-card" onclick="showGameDetail(\''+s.slug+'\')">'+
+    '<div class="slot-thumb">'+
+      '<img src="'+s.thumb+'" alt="'+s.name+'" loading="lazy" onerror="this.style.display=\'none\'"/>'+
+      '<div class="launch-overlay"><button class="launch-btn" onclick="event.stopPropagation();showGameDetail(\''+s.slug+'\')">▶ Launch Game</button></div>'+
+    '</div>'+
+    '<div class="slot-body">'+
+      '<div class="slot-name">'+s.name+'</div>'+
+      '<div class="slot-meta">'+
+        '<span class="slot-rtp">'+s.rtp+'</span>'+
+        (s.hot?'<span class="slot-badge badge-hot">🔥</span>':'')+
+        (s.isNew?'<span class="slot-badge badge-new">New</span>':'')+
+      '</div>'+
+      '<div class="slot-prov">'+s.provider+'</div>'+
+    '</div>'+
+  '</div>';
 }
 
+let slotsFilter = 'all';
 function renderSlots(){
-  const picks=['gates-of-olympus','koi-gate','sweet-bonanza','wanted-dead-or-a-wild','5-lucky-lions','gladiator-legends'];
-  document.getElementById('editor-picks').innerHTML=SLOTS.filter(s=>picks.includes(s.slug)).map(renderSlotCard).join('');
+  const picks=['lantern-luck','5-lucky-lions','gladiator-legends','wanted-dead-or-a-wild','big-bass-splash','spirit-of-adventure'];
+  const ep=document.getElementById('editor-picks');
+  if(ep)ep.innerHTML=SLOTS.filter(s=>picks.includes(s.slug)).map(renderSlotCard).join('');
   const filtered=slotsFilter==='all'?SLOTS:SLOTS.filter(s=>s.provider===slotsFilter);
-  document.getElementById('all-slots-grid').innerHTML=filtered.map(renderSlotCard).join('');
+  const ag=document.getElementById('all-slots-grid');
+  if(ag)ag.innerHTML=filtered.map(renderSlotCard).join('');
 }
 
 function setSlotsFilter(f,btn){
   slotsFilter=f;
-  document.querySelectorAll('#slot-filter-tabs button').forEach(b=>{b.className='btn-secondary';b.style.cssText='font-size:.78rem;padding:7px 18px';});
-  btn.className='btn-primary';btn.style.cssText='font-size:.78rem;padding:7px 18px';
+  document.querySelectorAll('#slot-filter-tabs button').forEach(b=>{b.className='btn-secondary';b.style.cssText='font-size:.76rem;padding:6px 16px;';});
+  btn.className='btn-primary';btn.style.cssText='font-size:.76rem;padding:6px 16px;';
   renderSlots();
 }
+
 function filterProv(p){slotsFilter=p;renderSlots();showPage('slots');}
 
-function showSlotReview(slug){
-  const s=SLOTS.find(x=>x.slug===slug);if(!s)return;
+function renderSlotFilters(){
+  const el=document.getElementById('slot-filter-tabs');
+  if(!el)return;
+  const tabs=[{f:'all',l:'All Games'},{f:'Pragmatic Play',l:'Pragmatic Play'},{f:'Habanero',l:'Habanero'},{f:'Hacksaw Gaming',l:'Hacksaw Gaming'}];
+  el.innerHTML=tabs.map((t,i)=>'<button class="'+(i===0?'btn-primary':'btn-secondary')+'" style="font-size:.76rem;padding:6px 16px;" onclick="setSlotsFilter(\''+t.f+'\',this)">'+t.l+'</button>').join('');
+}
+
+/* ══ GAME DETAIL ══ */
+function showGameDetail(slug){
+  const s=SLOTS.find(x=>x.slug===slug);
+  if(!s)return;
   const avail=BRANDS.filter(b=>b.providers.includes(s.provider));
-  const similar=SLOTS.filter(x=>x.slug!==slug).sort(()=>Math.random()-.5).slice(0,4);
-  document.getElementById('review-content').innerHTML=
-    '<div class="breadcrumb"><span class="lnk" onclick="showPage(\'home\')">Home</span> &rsaquo; <span class="lnk" onclick="showPage(\'slots\')">Slots</span> &rsaquo; '+s.name+'</div>'
-    +'<div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">'
-    +'<div style="flex:1;min-width:280px">'
-    +'<div class="sec-label">'+s.provider+' &middot; Slot Review</div>'
-    +'<h1 class="sec-title" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:12px">'+s.name+'</h1>'
-    +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">'
-    +'<span class="slot-rtp" style="font-size:.8rem;padding:4px 10px">'+s.rtp+' RTP</span>'
-    +'<span style="background:rgba(255,255,255,.06);color:var(--muted);padding:4px 10px;border-radius:4px;font-size:.78rem;font-family:var(--font-mono)">'+s.vol+' Vol</span>'
-    +'<span style="background:rgba(255,255,255,.06);color:var(--muted);padding:4px 10px;border-radius:4px;font-size:.78rem;font-family:var(--font-mono)">'+s.maxwin+' Max</span>'
-    +'</div>'
-    +'<div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:20px;font-size:.62rem;color:var(--muted);font-family:var(--font-mono);line-height:1.4">Reviewed by '+(s.provider==='Pragmatic Play'?'Thabo Nkosi &middot; Durban North, KZN &middot; PP Specialist':s.provider==='Habanero'?'Lerato Mokoena &middot; Soweto, Gauteng &middot; Habanero Champion':'Sipho Dlamini &middot; Sandton, Gauteng &middot; Lead Reviewer')+' &middot; 500+ real-money spins</div>'
-    +'<div style="font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:22px;font-weight:300">'+s.desc+'</div>'
-    +'<div class="sec-label">Where to Play in SA</div>'
-    +'<div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">'
-    +avail.map(b=>
-      '<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">'
-      +'<div style="font-family:var(--font-head);font-size:1.3rem;flex:1">'+b.emoji+' '+b.name+'</div>'
-      +'<div style="text-align:center;flex-shrink:0"><div style="font-family:var(--font-mono);font-size:.62rem;color:var(--muted)">Bonus</div><div style="color:var(--green);font-weight:700;font-size:.88rem">'+b.bonusDesc+'</div></div>'
-      +'<div class="code-box" onclick="copyCode(\''+b.code+'\')" style="flex-shrink:0"><div class="code-label">Promo Code</div><div class="code-val">'+b.code+'</div></div>'
-      +'<div style="display:flex;gap:6px;flex-shrink:0">'
-      +'<button class="btn-secondary" style="font-size:.72rem;padding:6px 12px" onclick="showReview(\''+b.id+'\')" >Review</button>'
-      +'<a class="btn-primary" style="font-size:.72rem;padding:6px 14px;border-radius:6px;font-weight:700" href="'+b.link+'" target="_blank" rel="noopener">Play &rarr;</a>'
-      +'</div></div>'
-    ).join('')
-    +'</div></div>'
-    +'<div style="width:260px;flex-shrink:0">'
-    +'<div class="sec-label" style="margin-bottom:10px">More Like This</div>'
-    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">'
-    +similar.map(s=>'<div class="slot-card" onclick="showSlotReview(\''+s.slug+'\')">'+'<div class="slot-thumb" style="font-size:2rem"><img src="'+s.thumb+'" alt="'+s.name+'" loading="lazy" onerror="this.parentNode.innerHTML=\'\\ud83c\\udfb0\'"/></div>'+'<div class="slot-body"><div class="slot-name" style="font-size:.72rem">'+s.name+'</div><div class="slot-prov" style="font-size:.62rem">'+s.rtp+'</div></div></div>').join('')
-    +'</div></div></div>';
-  showPage('review');
+  const related=SLOTS.filter(x=>x.slug!==slug&&(x.provider===s.provider||x.theme===s.theme)).slice(0,6);
+  const hubEntry=Object.entries(HUBS).find(([k,v])=>v.filter(s));
+  const hubLink=hubEntry?'<span class="hub-pill act" onclick="showHub(\''+hubEntry[0]+'\')" style="cursor:pointer">'+HUBS[hubEntry[0]].icon+' '+HUBS[hubEntry[0]].title+'</span>':'';
+
+  const payoutRows=s.symbols&&s.symbols.length?s.symbols.map((sym,i)=>
+    '<tr><td style="font-size:1.3rem;text-align:center">'+sym.s+'</td><td><strong>'+sym.n+'</strong></td><td class="payout-val '+(i===0?'payout-max':'')+'">'+sym.p+'</td><td style="color:var(--muted);font-size:.72rem">'+(sym.n.includes('Wild')?'Substitutes all':(sym.n.includes('Scatter')?'Triggers feature':(i===0?'Top symbol':'—')))+'</td></tr>'
+  ).join(''):'';
+
+  document.getElementById('game-detail-content').innerHTML=
+    '<div class="breadcrumb">'+
+      '<span class="lnk" onclick="showPage(\'home\')">Home</span> › '+
+      '<span class="lnk" onclick="showPage(\'slots\')">Slots</span> › '+
+      '<span class="lnk" onclick="filterProv(\''+s.provider+'\')">'+s.provider+'</span> › '+
+      s.name+
+    '</div>'+
+    '<div class="game-iframe-wrap" id="gameFrameWrap">'+
+      '<img src="'+s.thumb+'" alt="'+s.name+'" class="game-thumb-preview"/>'+
+      '<div class="game-launch-overlay">'+
+        '<button class="play-big-btn" onclick="launchIframe(\''+s.slug+'\',\''+s.iframeUrl+'\')"><span style="font-size:1.4rem">▶</span> Launch '+s.name+'</button>'+
+        '<div style="font-size:.72rem;color:var(--muted);font-family:var(--fm)">Free demo · No registration required</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="game-info-grid">'+
+      '<div>'+
+        '<div class="sec-label">'+s.provider+' · '+s.vol+' Volatility</div>'+
+        '<h1 style="font-family:var(--fh);font-size:clamp(1.8rem,4vw,3rem);line-height:1;margin-bottom:14px">'+s.name+'</h1>'+
+        '<div class="game-stats-row">'+
+          '<div class="gstat"><div class="gstat-val">'+s.rtp+'</div><div class="gstat-key">RTP</div></div>'+
+          '<div class="gstat"><div class="gstat-val">'+s.vol+'</div><div class="gstat-key">Volatility</div></div>'+
+          '<div class="gstat"><div class="gstat-val">'+s.reels+'</div><div class="gstat-key">Reels</div></div>'+
+          '<div class="gstat"><div class="gstat-val">'+s.maxwin+'</div><div class="gstat-key">Max Win</div></div>'+
+          (s.paylines?'<div class="gstat"><div class="gstat-val">'+s.paylines+'</div><div class="gstat-key">Paylines</div></div>':'')+
+        '</div>'+
+        (hubLink?'<div style="margin-bottom:16px">'+hubLink+'</div>':'')+
+        '<div class="game-desc-body"><p>'+s.desc+'</p></div>'+
+        (payoutRows?'<div class="rev-body-title">Payout Table</div><table class="payout-table"><thead><tr><th>Symbol</th><th>Name</th><th>Top Payout</th><th>Notes</th></tr></thead><tbody>'+payoutRows+'</tbody></table>':'')+
+        '<div style="margin-top:24px"><div class="sec-label">Related Games</div><div class="related-grid">'+related.map(renderSlotCard).join('')+'</div></div>'+
+      '</div>'+
+      '<div class="casino-sidebar">'+
+        '<div class="casino-sidebar-card">'+
+          '<div class="sidebar-title">PLAY '+s.name.toUpperCase()+' FOR REAL</div>'+
+          avail.map(b=>
+            '<div class="casino-mini">'+
+              '<div style="font-size:1.5rem">'+b.emoji+'</div>'+
+              '<div style="flex:1;min-width:0">'+
+                '<div class="casino-mini-name">'+b.name+'</div>'+
+                '<div class="casino-mini-bonus">'+b.bonus+' Bonus</div>'+
+              '</div>'+
+              '<div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">'+
+                '<span class="casino-mini-code" onclick="copyCode(\''+b.code+'\')">'+b.code+' 📋</span>'+
+                '<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener" style="font-size:.7rem;padding:6px 12px;border-radius:5px">Play →</a>'+
+              '</div>'+
+            '</div>'
+          ).join('')+
+        '</div>'+
+        '<div class="casino-sidebar-card">'+
+          '<div class="sidebar-title">QUICK STATS</div>'+
+          '<div style="font-size:.8rem;color:var(--muted);line-height:2">'+
+            '<div>Provider: <strong style="color:var(--text)">'+s.provider+'</strong></div>'+
+            '<div>RTP: <strong style="color:var(--green)">'+s.rtp+'</strong></div>'+
+            '<div>Volatility: <strong style="color:'+(s.vol==='High'?'var(--red)':s.vol==='Low'?'var(--green)':'var(--blue2)')+'">'+s.vol+'</strong></div>'+
+            '<div>Max Win: <strong style="color:var(--text)">'+s.maxwin+'</strong></div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="casino-sidebar-card">'+
+          '<div class="sidebar-title">EXPLORE HUBS</div>'+
+          HUB_PILLS.map(p=>'<div style="margin-bottom:6px"><span class="hub-pill" style="font-size:.72rem" onclick="showHub(\''+p.id+'\')">'+p.icon+' '+p.label+'</span></div>').join('')+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  showPage('game');
 }
 
-function showReview(id){
-  const b=BRANDS.find(x=>x.id===id);if(!b)return;const r=b.review;
-  document.getElementById('review-content').innerHTML=
-    '<div class="breadcrumb"><span class="lnk" onclick="showPage(\'home\')">Home</span> &rsaquo; <span class="lnk" onclick="showPage(\'casinos\')">Casinos</span> &rsaquo; '+b.name+'</div>'
-    +'<div class="rev-hero-card">'
-    +'<div class="rev-emoji">'+b.emoji+'</div>'
-    +'<div class="rev-info">'
-    +'<div class="rev-name">'+b.name+'</div>'
-    +'<div class="rev-url">\ud83c\udf10 '+b.url+'</div>'
-    +'<div class="rev-stars">'+starsHtml(b.stars)+'</div>'
-    +'<div class="rev-tags">'+b.tags.map(t=>'<span class="rtag">'+t+'</span>').join('')+'</div>'
-    +'</div>'
-    +'<div class="rev-right">'
-    +'<div class="rev-promo"><div class="rev-promo-label">Your Promo Code</div><div class="rev-promo-code" onclick="copyCode(\''+b.code+'\')" title="Click to copy">'+b.code+' \ud83d\udccb</div></div>'
-    +'<a class="rev-cta" href="'+b.link+'" target="_blank" rel="noopener noreferrer">\ud83c\udfb0 Claim Bonus at '+b.name+'</a>'
-    +'<div style="font-size:.62rem;color:#444;text-align:center">18+ &middot; T&Cs Apply &middot; Play Responsibly</div>'
-    +'</div></div>'
-    +'<div class="bonus-box"><div class="bb-item"><div class="bb-val">'+b.bonus+'</div><div class="bb-key">WELCOME BONUS</div></div><div class="bb-item"><div class="bb-val">'+b.bonusDesc+'</div><div class="bb-key">OFFER TYPE</div></div><div class="bb-item"><div class="bb-val">'+b.minDep+'</div><div class="bb-key">MIN DEPOSIT</div></div><div class="bb-item"><div class="bb-val">'+b.wagering+'</div><div class="bb-key">WAGERING REQ</div></div><div class="bb-item"><span class="code-box" onclick="copyCode(\''+b.code+'\')" style="display:inline-block"><div class="code-label">Promo Code</div><div class="code-val">'+b.code+'</div></span></div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Overview</div><div class="rev-body-copy"><p>'+r.overview+'</p></div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Bonuses &amp; Promotions</div><div class="rev-body-copy"><p>'+r.bonuses+'</p></div></div>'
-    +'<div class="pros-cons"><div class="pros"><h4>&#9989; Pros</h4>'+r.pros.map(p=>'<li>&#10003; '+p+'</li>').join('')+'</div><div class="cons"><h4>&#10060; Cons</h4>'+r.cons.map(c=>'<li>&#10007; '+c+'</li>').join('')+'</div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Payments &amp; Withdrawals</div><div class="rev-body-copy"><p>'+r.payments+'</p></div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Game Providers</div><div class="chips">'+['Hacksaw Gaming','Habanero','Pragmatic Play'].map(p=>'<span class="chip '+(b.providers.includes(p)?'has':'')+'">'+( b.providers.includes(p)?'&#10003; ':'')+p+'</span>').join('')+'</div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Customer Support</div><div class="rev-body-copy"><p>'+r.support+'</p></div></div>'
-    +'<div class="rev-body-section"><div class="rev-body-title">Our Ratings</div><table class="rating-tbl">'+Object.entries(r.ratings).map(([k,v])=>'<tr><td>'+k+'</td><td>'+rbar(v)+'</td></tr>').join('')+'</table></div>'
-    +'<div style="text-align:center;margin-top:28px;padding:24px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">'
-    +'<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;font-size:.92rem;padding:14px 36px;border-radius:8px">\ud83c\udfb0 Register at '+b.name+' — Use Code '+b.code+'</a>'
-    +'<div style="font-size:.65rem;color:#444;margin-top:10px">18+ &middot; New players only &middot; T&Cs apply &middot; Please gamble responsibly</div>'
-    +'</div>';
-  showPage('review');
+function launchIframe(slug,url){
+  const wrap=document.getElementById('gameFrameWrap');
+  if(wrap)wrap.innerHTML='<iframe src="'+url+'&token='+API_KEY+'" allowfullscreen allow="autoplay" title="'+slug+'"></iframe>';
 }
 
+/* ══ CASINO ROWS ══ */
 function renderCasinoRow(b,short){
-  return '<div class="casino-row" onclick="showReview(\''+b.id+'\')">'  
-    +'<div class="casino-rank '+(b.rank<=3?'top':'')+'">'+b.rank+'</div>'
-    +'<div style="font-size:1.4rem;flex-shrink:0">'+b.emoji+'</div>'
-    +'<div class="casino-info">'
-    +'<div class="casino-name">'+b.name+' <span style="font-size:.7rem;color:var(--muted);font-family:var(--font-mono);font-weight:400">'+b.url+'</span></div>'
-    +'<div class="casino-desc">'+(short?b.shortDesc.substring(0,90)+(b.shortDesc.length>90?'\u2026':''):b.shortDesc)+'</div>'
-    +'<div class="casino-stars">'+starsHtml(b.stars)+'</div>'
-    +'</div>'
-    +'<div class="casino-bonus"><div class="casino-bonus-amt">'+b.bonus+'</div><div class="casino-bonus-label">'+b.bonusDesc+'</div></div>'
-    +'<div class="casino-code"><div class="code-box" onclick="event.stopPropagation();copyCode(\''+b.code+'\')">'  
-    +'<div class="code-label">Promo Code</div><div class="code-val">'+b.code+'</div></div></div>'
-    +'<div class="casino-cta" onclick="event.stopPropagation()">'
-    +'<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener noreferrer" style="display:block;font-size:.78rem;padding:10px 16px;border-radius:6px;font-weight:700;white-space:nowrap">Claim Bonus</a>'
-    +'</div></div>';
+  return '<div class="casino-row" onclick="showReview(\''+b.id+'\')">'+
+    '<div class="casino-rank '+(b.rank<=3?'top':'')+'">'+b.rank+'</div>'+
+    '<div style="font-size:1.3rem;flex-shrink:0">'+b.emoji+'</div>'+
+    '<div class="casino-info">'+
+      '<div class="casino-name">'+b.name+' <span style="font-size:.68rem;color:var(--muted);font-family:var(--fm);font-weight:400">'+b.url+'</span></div>'+
+      '<div class="casino-desc">'+(short?b.shortDesc.substring(0,85)+'…':b.shortDesc)+'</div>'+
+      '<div class="casino-stars">'+starsHtml(b.stars)+'</div>'+
+    '</div>'+
+    '<div style="text-align:center;flex-shrink:0">'+
+      '<div class="casino-bonus-amt">'+b.bonus+'</div>'+
+      '<div class="casino-bonus-label">'+b.bonusDesc+'</div>'+
+    '</div>'+
+    '<div class="code-box" onclick="event.stopPropagation();copyCode(\''+b.code+'\')">'+
+      '<div class="code-label">Promo Code</div><div class="code-val">'+b.code+'</div>'+
+    '</div>'+
+    '<div onclick="event.stopPropagation()">'+
+      '<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener" style="font-size:.76rem;padding:9px 14px;border-radius:6px;font-weight:700;white-space:nowrap">Claim Bonus</a>'+
+    '</div>'+
+  '</div>';
 }
 
 function renderCasinos(){
-  document.getElementById('home-casino-list').innerHTML=BRANDS.slice(0,4).map(b=>renderCasinoRow(b,true)).join('');
-  document.getElementById('full-casino-list').innerHTML=BRANDS.map(b=>renderCasinoRow(b,false)).join('');
-  document.getElementById('wtp-table-body').innerHTML=BRANDS.map(b=>
-    '<tr>'
-    +'<td style="font-family:var(--font-head);font-size:1.2rem;color:'+(b.rank<=3?'var(--gold)':'var(--muted)')+'">'+b.rank+'</td>'
-    +'<td><strong>'+b.emoji+' '+b.name+'</strong><br><span style="font-size:.65rem;color:var(--muted);font-family:var(--font-mono)">'+b.url+'</span></td>'
-    +'<td style="color:var(--green);font-weight:700">'+b.bonusDesc+'</td>'
-    +'<td><span class="code-box" onclick="copyCode(\''+b.code+'\')" style="display:inline-block"><div class="code-label">Code</div><div class="code-val">'+b.code+'</div></span></td>'
-    +'<td style="text-align:center">'+(b.providers.includes('Hacksaw Gaming')?'<span class="tick">&#10004;</span>':'<span class="cross">&#10006;</span>')+'</td>'
-    +'<td style="text-align:center">'+(b.providers.includes('Habanero')?'<span class="tick">&#10004;</span>':'<span class="cross">&#10006;</span>')+'</td>'
-    +'<td style="text-align:center">'+(b.providers.includes('Pragmatic Play')?'<span class="tick">&#10004;</span>':'<span class="cross">&#10006;</span>')+'</td>'
-    +'<td style="color:var(--gold);font-size:.85rem">'+starsHtml(b.stars)+'</td>'
-    +'<td style="white-space:nowrap"><div style="display:flex;gap:5px"><button class="btn-secondary" style="font-size:.68rem;padding:5px 10px" onclick="showReview(\''+b.id+'\')" >Review</button><a class="btn-primary" style="font-size:.68rem;padding:5px 10px;border-radius:5px;font-weight:700" href="'+b.link+'" target="_blank" rel="noopener">Play &rarr;</a></div></td>'
-    +'</tr>'
+  const hcl=document.getElementById('home-casino-list');
+  if(hcl)hcl.innerHTML=BRANDS.slice(0,4).map(b=>renderCasinoRow(b,true)).join('');
+  const fcl=document.getElementById('full-casino-list');
+  if(fcl)fcl.innerHTML=BRANDS.map(b=>renderCasinoRow(b,false)).join('');
+  const wtb=document.getElementById('wtp-table-body');
+  if(wtb)wtb.innerHTML=BRANDS.map(b=>
+    '<tr>'+
+      '<td style="font-family:var(--fh);font-size:1.15rem;color:'+(b.rank<=3?'var(--blue2)':'var(--muted)')+'">'+b.rank+'</td>'+
+      '<td><strong>'+b.emoji+' '+b.name+'</strong><br><span style="font-size:.63rem;color:var(--muted);font-family:var(--fm)">'+b.url+'</span></td>'+
+      '<td style="color:var(--green);font-weight:700">'+b.bonusDesc+'</td>'+
+      '<td><span class="code-box" onclick="copyCode(\''+b.code+'\')" style="display:inline-block;cursor:pointer"><div class="code-label">Code</div><div class="code-val">'+b.code+'</div></span></td>'+
+      '<td style="text-align:center">'+(b.providers.includes('Hacksaw Gaming')?'<span class="tick">✔</span>':'<span class="cross">✖</span>')+'</td>'+
+      '<td style="text-align:center">'+(b.providers.includes('Habanero')?'<span class="tick">✔</span>':'<span class="cross">✖</span>')+'</td>'+
+      '<td style="text-align:center">'+(b.providers.includes('Pragmatic Play')?'<span class="tick">✔</span>':'<span class="cross">✖</span>')+'</td>'+
+      '<td style="color:var(--blue2);font-size:.82rem">'+starsHtml(b.stars)+'</td>'+
+      '<td style="white-space:nowrap"><div style="display:flex;gap:4px"><button class="btn-secondary" style="font-size:.65rem;padding:5px 9px" onclick="showReview(\''+b.id+'\')">Review</button><a class="btn-primary" style="font-size:.65rem;padding:5px 9px;border-radius:5px;font-weight:700" href="'+b.link+'" target="_blank" rel="noopener">Play →</a></div></td>'+
+    '</tr>'
   ).join('');
 }
 
-function renderAbout(){
-  document.getElementById('team-grid').innerHTML=TEAM.map(m=>
-    '<div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:20px">'
-    +'<div style="font-size:2.5rem;margin-bottom:10px">'+m.emoji+'</div>'
-    +'<div style="font-weight:700;margin-bottom:2px">'+m.name+'</div>'
-    +'<div style="font-family:var(--font-mono);font-size:.65rem;color:var(--gold);margin-bottom:3px">'+m.role+'</div>'
-    +'<div style="font-family:var(--font-mono);font-size:.62rem;color:var(--muted);margin-bottom:10px">\ud83d\udccd '+m.location+'</div>'
-    +'<div style="font-size:.78rem;color:var(--muted);font-weight:300;line-height:1.6">'+m.spec+'</div>'
-    +'</div>'
+/* ══ CASINO REVIEW ══ */
+function showReview(id){
+  const b=BRANDS.find(x=>x.id===id);
+  if(!b)return;
+  const r=b.review;
+  const avGames=SLOTS.filter(s=>b.providers.includes(s.provider)).slice(0,4);
+  document.getElementById('review-content').innerHTML=
+    '<div class="breadcrumb"><span class="lnk" onclick="showPage(\'home\')">Home</span> › <span class="lnk" onclick="showPage(\'reviews\')">Casino Reviews</span> › '+b.name+'</div>'+
+    '<div class="rev-hero-card">'+
+      '<div class="rev-emoji">'+b.emoji+'</div>'+
+      '<div style="flex:1;min-width:180px">'+
+        '<div class="rev-name">'+b.name+'</div>'+
+        '<div style="font-family:var(--fm);font-size:.7rem;color:var(--muted);margin-bottom:7px">🌐 '+b.url+'</div>'+
+        '<div class="rev-stars">'+starsHtml(b.stars)+'</div>'+
+        '<div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:7px">'+b.tags.map(t=>'<span class="rtag">'+t+'</span>').join('')+'</div>'+
+      '</div>'+
+      '<div style="display:flex;flex-direction:column;gap:9px;align-items:flex-end;flex-shrink:0">'+
+        '<div class="rev-promo">'+
+          '<div class="rev-promo-label">Your Promo Code</div>'+
+          '<div class="rev-promo-code" onclick="copyCode(\''+b.code+'\')">'+b.code+' 📋</div>'+
+        '</div>'+
+        '<a class="rev-cta" href="'+b.link+'" target="_blank" rel="noopener">🎰 Claim Bonus at '+b.name+'</a>'+
+        '<div style="font-size:.6rem;color:var(--muted);text-align:center">18+ · T&amp;Cs Apply · Gamble Responsibly</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="bonus-box">'+
+      '<div class="bb-item"><div class="bb-val">'+b.bonus+'</div><div class="bb-key">WELCOME BONUS</div></div>'+
+      '<div class="bb-item"><div class="bb-val">'+b.bonusDesc+'</div><div class="bb-key">OFFER TYPE</div></div>'+
+      '<div class="bb-item"><div class="bb-val">'+b.minDep+'</div><div class="bb-key">MIN DEPOSIT</div></div>'+
+      '<div class="bb-item"><div class="bb-val">'+b.wagering+'</div><div class="bb-key">WAGERING</div></div>'+
+      '<div class="bb-item"><span class="code-box" onclick="copyCode(\''+b.code+'\')" style="display:inline-block;cursor:pointer"><div class="code-label">Promo Code</div><div class="code-val">'+b.code+'</div></span></div>'+
+    '</div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Overview</div><div class="rev-body-copy"><p>'+r.overview+'</p></div></div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Bonuses &amp; Promotions</div><div class="rev-body-copy"><p>'+r.bonuses+'</p></div></div>'+
+    '<div class="pros-cons"><div class="pros"><h4>✅ Pros</h4>'+r.pros.map(p=>'<li>✓ '+p+'</li>').join('')+'</div><div class="cons"><h4>❌ Cons</h4>'+r.cons.map(c=>'<li>✗ '+c+'</li>').join('')+'</div></div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Payments &amp; Withdrawals</div><div class="rev-body-copy"><p>'+r.payments+'</p></div></div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Game Providers</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:7px">'+['Hacksaw Gaming','Habanero','Pragmatic Play'].map(p=>'<span class="chip '+(b.providers.includes(p)?'has':'')+'">'+(b.providers.includes(p)?'✓ ':'')+p+'</span>').join('')+'</div></div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Customer Support</div><div class="rev-body-copy"><p>'+r.support+'</p></div></div>'+
+    '<div style="margin-bottom:20px"><div class="rev-body-title">Our Ratings</div><table class="rating-tbl">'+Object.entries(r.ratings).map(([k,v])=>'<tr><td>'+k+'</td><td>'+rbar(v)+'</td></tr>').join('')+'</table></div>'+
+    (avGames.length?'<div style="margin-bottom:20px"><div class="rev-body-title">Top Games at '+b.name+'</div><div class="slot-grid" style="margin-top:12px">'+avGames.map(renderSlotCard).join('')+'</div></div>':'')+
+    '<div style="text-align:center;margin-top:24px;padding:20px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">'+
+      '<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener" style="font-size:.9rem;padding:13px 32px;border-radius:8px">🎰 Register at '+b.name+' — Use Code '+b.code+'</a>'+
+      '<div style="font-size:.63rem;color:var(--muted);margin-top:8px">18+ · New players only · T&amp;Cs apply · Please gamble responsibly</div>'+
+    '</div>';
+  showPage('review');
+}
+
+/* ══ REVIEWS INDEX ══ */
+function renderReviewsIndex(){
+  const grid=document.getElementById('reviews-cards-grid');
+  const tbl=document.getElementById('reviews-table-body');
+  if(!grid||!tbl)return;
+  grid.innerHTML=BRANDS.map(b=>{
+    const ratingBars=Object.entries(b.review.ratings).slice(0,3).map(([k,v])=>
+      '<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">'+
+        '<div style="font-size:.68rem;color:var(--muted);width:70px;flex-shrink:0">'+k+'</div>'+
+        '<div style="flex:1;height:4px;background:var(--bg4);border-radius:2px;overflow:hidden"><div style="height:100%;background:var(--blue2);width:'+v*10+'%;border-radius:2px"></div></div>'+
+        '<div style="font-size:.68rem;color:var(--blue2);font-family:var(--fm);width:24px;text-align:right">'+v+'</div>'+
+      '</div>'
+    ).join('');
+    return '<div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:.25s" onmouseover="this.style.borderColor=\'rgba(30,111,217,.4)\';this.style.transform=\'translateY(-3px)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'none\'" onclick="showReview(\''+b.id+'\')">'+
+      '<div style="background:linear-gradient(135deg,var(--bg3),var(--bg4));padding:18px 18px 12px">'+
+        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">'+
+          '<div style="font-size:2rem">'+b.emoji+'</div>'+
+          '<div>'+
+            '<div style="font-family:var(--fh);font-size:1.5rem;line-height:1">'+b.name+'</div>'+
+            '<div style="font-size:.65rem;color:var(--muted);font-family:var(--fm)">'+b.url+'</div>'+
+          '</div>'+
+          '<div style="margin-left:auto;background:var(--blue2);color:#fff;font-family:var(--fh);font-size:1.3rem;width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">'+b.stars+'</div>'+
+        '</div>'+
+        '<div style="display:flex;gap:5px;flex-wrap:wrap">'+b.tags.map(t=>'<span style="font-size:.6rem;background:rgba(30,111,217,.15);border:1px solid rgba(30,111,217,.2);color:var(--blue2);padding:2px 7px;border-radius:10px;font-family:var(--fm)">'+t+'</span>').join('')+'</div>'+
+      '</div>'+
+      '<div style="padding:14px 18px">'+
+        '<div style="font-size:.8rem;color:var(--muted);margin-bottom:12px;font-weight:300;line-height:1.6">'+b.shortDesc.substring(0,100)+'…</div>'+
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">'+
+          '<div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center">'+
+            '<div style="font-family:var(--fh);font-size:1.2rem;color:var(--green)">'+b.bonus+'</div>'+
+            '<div style="font-size:.6rem;color:var(--muted);font-family:var(--fm)">'+b.bonusDesc+'</div>'+
+          '</div>'+
+          '<div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center">'+
+            '<div style="font-family:var(--fh);font-size:1.2rem;color:'+(b.wagering==='25x'?'var(--green)':b.wagering==='70x'?'var(--red)':'var(--text)')+'">'+b.wagering+'</div>'+
+            '<div style="font-size:.6rem;color:var(--muted);font-family:var(--fm)">Wagering Req</div>'+
+          '</div>'+
+        '</div>'+
+        ratingBars+
+        '<div style="display:flex;gap:7px;margin-top:12px">'+
+          '<div onclick="copyCode(\''+b.code+'\');event.stopPropagation()" style="flex:1;background:rgba(30,111,217,.1);border:1px dashed rgba(30,111,217,.3);border-radius:6px;padding:7px;text-align:center;cursor:pointer">'+
+            '<div style="font-size:.58rem;color:var(--muted);font-family:var(--fm)">PROMO CODE</div>'+
+            '<div style="font-family:var(--fm);font-size:.85rem;color:var(--blue2);font-weight:500">'+b.code+'</div>'+
+          '</div>'+
+          '<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-size:.74rem;padding:8px 14px;border-radius:6px;font-weight:700;white-space:nowrap;display:flex;align-items:center">Play →</a>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+  tbl.innerHTML=BRANDS.map(b=>
+    '<tr onclick="showReview(\''+b.id+'\')" style="cursor:pointer">'+
+      '<td style="font-family:var(--fh);font-size:1.15rem;color:'+(b.rank<=3?'var(--blue2)':'var(--muted)')+'">'+b.rank+'</td>'+
+      '<td><strong>'+b.emoji+' '+b.name+'</strong><br><span style="font-size:.62rem;color:var(--muted);font-family:var(--fm)">'+b.url+'</span></td>'+
+      '<td style="color:var(--green);font-weight:700;white-space:nowrap">'+b.bonus+'<br><span style="font-size:.65rem;font-weight:400;color:var(--muted)">'+b.bonusDesc+'</span></td>'+
+      '<td style="font-family:var(--fm);color:'+(b.wagering==='25x'?'var(--green)':b.wagering==='70x'?'var(--red)':'var(--text)')+'">'+b.wagering+'</td>'+
+      '<td style="font-family:var(--fm)">'+b.minDep+'</td>'+
+      '<td><span class="code-box" onclick="event.stopPropagation();copyCode(\''+b.code+'\')" style="display:inline-block;cursor:pointer"><div class="code-label">Code</div><div class="code-val">'+b.code+'</div></span></td>'+
+      '<td style="color:var(--blue2);font-size:.82rem;white-space:nowrap">'+starsHtml(b.stars)+'</td>'+
+      '<td style="white-space:nowrap"><div style="display:flex;gap:4px"><button class="btn-secondary" style="font-size:.65rem;padding:5px 9px" onclick="event.stopPropagation();showReview(\''+b.id+'\')">Review</button><a class="btn-primary" style="font-size:.65rem;padding:5px 9px;border-radius:5px;font-weight:700" href="'+b.link+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">Play →</a></div></td>'+
+    '</tr>'
   ).join('');
 }
 
+/* ══ PROMO CODES PAGE ══ */
+function renderPromos(){
+  const el=document.getElementById('promo-grid');
+  if(!el)return;
+  el.innerHTML=BRANDS.map(b=>
+    '<div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden">'+
+      '<div style="background:linear-gradient(135deg,var(--bg3),var(--bg4));padding:20px 20px 14px;display:flex;align-items:center;gap:14px">'+
+        '<div style="font-size:2.2rem">'+b.emoji+'</div>'+
+        '<div>'+
+          '<div style="font-family:var(--fh);font-size:1.4rem;line-height:1">'+b.name+'</div>'+
+          '<div style="font-size:.68rem;color:var(--muted);font-family:var(--fm)">'+b.url+'</div>'+
+        '</div>'+
+        '<div style="margin-left:auto;color:var(--blue2);font-size:.82rem">'+starsHtml(b.stars)+'</div>'+
+      '</div>'+
+      '<div style="padding:16px 20px">'+
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">'+
+          '<div>'+
+            '<div style="font-family:var(--fh);font-size:1.6rem;color:var(--green);line-height:1">'+b.bonus+'</div>'+
+            '<div style="font-size:.7rem;color:var(--muted);font-family:var(--fm)">'+b.bonusDesc+'</div>'+
+          '</div>'+
+          '<div style="text-align:right">'+
+            '<div style="font-size:.62rem;color:var(--muted);font-family:var(--fm);margin-bottom:2px">Wagering</div>'+
+            '<div style="font-family:var(--fh);font-size:1.1rem;color:'+(b.wagering==='25x'?'var(--green)':b.wagering==='70x'?'var(--red)':'var(--text)')+'">'+b.wagering+'</div>'+
+          '</div>'+
+        '</div>'+
+        '<div onclick="copyCode(\''+b.code+'\')" style="background:rgba(30,111,217,.08);border:2px dashed rgba(30,111,217,.35);border-radius:8px;padding:12px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">'+
+          '<div>'+
+            '<div style="font-size:.58rem;color:var(--muted);font-family:var(--fm);margin-bottom:3px">YOUR PROMO CODE</div>'+
+            '<div style="font-family:var(--fm);font-size:1.3rem;font-weight:500;color:var(--blue2);letter-spacing:2px">'+b.code+'</div>'+
+          '</div>'+
+          '<div style="background:var(--blue2);color:#fff;padding:7px 14px;border-radius:6px;font-size:.72rem;font-weight:700">Copy 📋</div>'+
+        '</div>'+
+        '<div style="display:flex;gap:8px">'+
+          '<button class="btn-secondary" style="flex:1;font-size:.75rem;padding:9px" onclick="showReview(\''+b.id+'\')">Read Review</button>'+
+          '<a class="btn-primary" href="'+b.link+'" target="_blank" rel="noopener" style="flex:1;font-size:.75rem;padding:9px;border-radius:7px;text-align:center;font-weight:700">Claim Bonus →</a>'+
+        '</div>'+
+        '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">'+
+          b.providers.map(p=>'<span style="font-size:.62rem;background:rgba(30,111,217,.1);border:1px solid rgba(30,111,217,.15);color:var(--blue2);padding:2px 7px;border-radius:10px">'+p+'</span>').join('')+
+          '<span style="font-size:.62rem;background:rgba(0,168,118,.1);border:1px solid rgba(0,168,118,.15);color:var(--green);padding:2px 7px;border-radius:10px">Min: '+b.minDep+'</span>'+
+        '</div>'+
+      '</div>'+
+    '</div>'
+  ).join('');
+}
+
+/* ══ AI ADVISOR ══ */
+const advisorQuiz=[
+  {q:"What's your session budget?",opts:["Under R100","R100–R500","R500–R2,000","R2,000+"]},
+  {q:"How do you like to play?",opts:["Long sessions, steady wins","Big risk for big wins","Somewhere in between","Just testing"]},
+  {q:"Which theme appeals to you?",opts:["Fantasy / Mythology","Action / Adventure","Asian / Luck","Classic / Fruit"]}
+];
+let advisorAnswers=[],advisorStep=0;
+function openAdvisor(){advisorAnswers=[];advisorStep=0;renderAdvisorStep();document.getElementById('advisorModal').classList.remove('hidden');}
+function renderAdvisorStep(){
+  const body=document.getElementById('quizBody');
+  if(advisorStep<advisorQuiz.length){
+    const q=advisorQuiz[advisorStep];
+    body.innerHTML='<div class="quiz-label">QUESTION '+(advisorStep+1)+' OF '+advisorQuiz.length+'</div><div style="font-weight:600;font-size:.92rem;margin-bottom:12px">'+q.q+'</div>'+q.opts.map(o=>'<button class="quiz-opt" onclick="advisorAnswer(\''+o+'\')">'+o+'</button>').join('')+'<div style="font-size:.68rem;color:var(--muted);margin-top:8px;font-family:var(--fm)">'+(advisorStep+1)+'/'+advisorQuiz.length+'</div>';
+  } else {
+    getAdvisorResult();
+  }
+}
+function advisorAnswer(ans){advisorAnswers.push(ans);advisorStep++;renderAdvisorStep();}
+async function getAdvisorResult(){
+  const body=document.getElementById('quizBody');
+  body.innerHTML='<div class="ai-loading" style="justify-content:center;padding:24px 0"><div class="dot"></div><div class="dot"></div><div class="dot"></div><span style="margin-left:8px">MoneyGames is finding your perfect match…</span></div>';
+  const slotList=SLOTS.map(s=>s.name+' ('+s.provider+', RTP '+s.rtp+', '+s.vol+' vol, '+s.theme+' theme, max '+s.maxwin+')').join('; ');
+  const prompt='SA player quiz:\n1. Budget: '+advisorAnswers[0]+'\n2. Style: '+advisorAnswers[1]+'\n3. Theme: '+advisorAnswers[2]+'\n\nAvailable: '+slotList+'\n\nRecommend top 2-3 slots. For each: name, why it suits them, one practical tip. SA-friendly, under 180 words.';
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':API_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'SA slots expert at MoneyGames.co.za. Concise, honest, SA-friendly. Never mention Claude.',messages:[{role:'user',content:prompt}]})});
+    const data=await res.json();
+    const txt=(data.content&&data.content.find(c=>c.type==='text')&&data.content.find(c=>c.type==='text').text)||'Unable to generate.';
+    body.innerHTML='<div style="margin-bottom:10px;font-size:.65rem;color:var(--blue2);font-family:var(--fm);letter-spacing:1px">✓ YOUR PERSONALISED RECOMMENDATION</div><div class="ai-response">'+txt.split('\n\n').map(p=>'<p>'+p+'</p>').join('')+'</div><div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn-primary" style="font-size:.78rem;padding:8px 16px" onclick="showPage(\'slots\');closeModal(\'advisorModal\')">Browse All Slots</button><button class="btn-secondary" style="font-size:.78rem;padding:8px 16px" onclick="openAdvisor()">Retake Quiz</button></div>';
+  } catch(e){
+    body.innerHTML='<div class="ai-response"><p>Recommendations unavailable right now.</p></div>';
+  }
+}
+
+/* ══ AI CASINO MATCHER ══ */
+const matcherQuiz=[
+  {q:"What matters most to you?",opts:["Biggest bonus","Lowest wagering req","Specific game provider","Fast withdrawals"]},
+  {q:"What's your typical deposit?",opts:["Under R100","R100–R500","R500–R2,000","R2,000+"]},
+  {q:"Do you need Hacksaw Gaming slots?",opts:["Yes — essential","Nice to have","Don't mind","What's Hacksaw?"]}
+];
+let matcherAnswers=[],matcherStep=0;
+function openMatcher(){matcherAnswers=[];matcherStep=0;renderMatcherStep();document.getElementById('matcherModal').classList.remove('hidden');}
+function renderMatcherStep(){
+  const body=document.getElementById('matcherBody');
+  if(matcherStep<matcherQuiz.length){
+    const q=matcherQuiz[matcherStep];
+    body.innerHTML='<div class="quiz-label">QUESTION '+(matcherStep+1)+' OF '+matcherQuiz.length+'</div><div style="font-weight:600;font-size:.92rem;margin-bottom:12px">'+q.q+'</div>'+q.opts.map(o=>'<button class="quiz-opt" onclick="matcherAnswer(\''+o+'\')">'+o+'</button>').join('');
+  } else {
+    getMatcherResult();
+  }
+}
+function matcherAnswer(ans){matcherAnswers.push(ans);matcherStep++;renderMatcherStep();}
+async function getMatcherResult(){
+  const body=document.getElementById('matcherBody');
+  body.innerHTML='<div class="ai-loading" style="justify-content:center;padding:24px 0"><div class="dot"></div><div class="dot"></div><div class="dot"></div><span style="margin-left:8px">MoneyGames is matching you to the ideal casino…</span></div>';
+  const casinoList=BRANDS.map(b=>b.name+': '+b.bonusDesc+', '+b.wagering+' wagering, min dep '+b.minDep+', providers: '+b.providers.join('/')+', '+b.stars+' stars, code: '+b.code).join('; ');
+  const prompt='SA casino quiz:\n1. Priority: '+matcherAnswers[0]+'\n2. Deposit: '+matcherAnswers[1]+'\n3. Hacksaw need: '+matcherAnswers[2]+'\n\nCasinos: '+casinoList+'\n\nRecommend top 1-2 casinos. Explain why, mention promo code and bonus. One honest caveat each. SA tone, under 180 words.';
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':API_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'SA casino expert at MoneyGames.co.za. Honest, specific, mention promo codes. Never mention Claude.',messages:[{role:'user',content:prompt}]})});
+    const data=await res.json();
+    const txt=(data.content&&data.content.find(c=>c.type==='text')&&data.content.find(c=>c.type==='text').text)||'Unable to match.';
+    body.innerHTML='<div style="margin-bottom:10px;font-size:.65rem;color:var(--blue2);font-family:var(--fm);letter-spacing:1px">✓ YOUR CASINO MATCH</div><div class="ai-response">'+txt.split('\n\n').map(p=>'<p>'+p+'</p>').join('')+'</div><div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn-primary" style="font-size:.78rem;padding:8px 16px" onclick="showPage(\'casinos\');closeModal(\'matcherModal\')">See All Casinos</button><button class="btn-secondary" style="font-size:.78rem;padding:8px 16px" onclick="openMatcher()">Retake</button></div>';
+  } catch(e){
+    body.innerHTML='<div class="ai-response"><p>Match unavailable right now.</p></div>';
+  }
+}
+
+/* ══ RG LIST ══ */
+function renderRGList(){
+  const el=document.getElementById('rg-list');
+  if(!el)return;
+  const items=['Set a budget before you start — stick to it','Never chase losses with bigger bets','Gambling is not a way to make money','Don\'t play when emotional or stressed','Take breaks — use session timers','Self-exclusion available at every casino we list','Gamblers Anonymous SA: 0800 006 008','SADAG Mental Health: 0800 567 567'];
+  el.innerHTML=items.map(i=>'<li style="padding:8px 0;border-bottom:1px solid var(--border);font-size:.8rem;color:var(--muted);display:flex;gap:8px;font-weight:300"><span style="color:var(--blue2);flex-shrink:0">→</span>'+i+'</li>').join('');
+}
+
+/* ══ INIT ══ */
 injectFooters();
-initHero();
+renderSlotFilters();
 renderSlots();
 renderCasinos();
-renderAbout();
+renderHubPills('home-hub-pills');
+renderHubPills('slots-hub-pills');
+renderPromos();
+renderReviewsIndex();
+renderRGList();
 </script>
 </body>
 </html>
